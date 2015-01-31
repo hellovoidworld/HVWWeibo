@@ -1,0 +1,642 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E07837551A7C7375003CD8B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E07837541A7C7375003CD8B5 /* main.m */; };
+		E07837601A7C7375003CD8B5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E078375F1A7C7375003CD8B5 /* Images.xcassets */; };
+		E078376F1A7C7375003CD8B5 /* HVWWeiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E078376E1A7C7375003CD8B5 /* HVWWeiboTests.m */; };
+		E07837AE1A7C82BA003CD8B5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E07837AD1A7C82BA003CD8B5 /* AppDelegate.m */; };
+		E07837B11A7C85F4003CD8B5 /* HVWTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E07837B01A7C85F4003CD8B5 /* HVWTabBarViewController.m */; };
+		E07837B41A7C87AA003CD8B5 /* HVWHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E07837B31A7C87AA003CD8B5 /* HVWHomeViewController.m */; };
+		E07837B71A7C87CD003CD8B5 /* HVWMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E07837B61A7C87CD003CD8B5 /* HVWMessageViewController.m */; };
+		E07837BA1A7C87DC003CD8B5 /* HVWProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E07837B91A7C87DC003CD8B5 /* HVWProfileViewController.m */; };
+		E07837BD1A7C87EB003CD8B5 /* HVWDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E07837BC1A7C87EB003CD8B5 /* HVWDiscoverViewController.m */; };
+		E07837C41A7C8E42003CD8B5 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E07837C31A7C8E42003CD8B5 /* UIImage+Extension.m */; };
+		E07837C81A7D06F9003CD8B5 /* HVWNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E07837C71A7D06F9003CD8B5 /* HVWNavigationViewController.m */; };
+		E07837CF1A7D2599003CD8B5 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E07837CE1A7D2599003CD8B5 /* UIBarButtonItem+Extension.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E07837691A7C7375003CD8B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E07837471A7C7375003CD8B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E078374E1A7C7375003CD8B5;
+			remoteInfo = HVWWeibo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E078374F1A7C7375003CD8B5 /* HVWWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HVWWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E07837531A7C7375003CD8B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E07837541A7C7375003CD8B5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E078375F1A7C7375003CD8B5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E07837681A7C7375003CD8B5 /* HVWWeiboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HVWWeiboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E078376D1A7C7375003CD8B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E078376E1A7C7375003CD8B5 /* HVWWeiboTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HVWWeiboTests.m; sourceTree = "<group>"; };
+		E07837AC1A7C82BA003CD8B5 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E07837AD1A7C82BA003CD8B5 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E07837AF1A7C85F4003CD8B5 /* HVWTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWTabBarViewController.h; sourceTree = "<group>"; };
+		E07837B01A7C85F4003CD8B5 /* HVWTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWTabBarViewController.m; sourceTree = "<group>"; };
+		E07837B21A7C87AA003CD8B5 /* HVWHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWHomeViewController.h; sourceTree = "<group>"; };
+		E07837B31A7C87AA003CD8B5 /* HVWHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWHomeViewController.m; sourceTree = "<group>"; };
+		E07837B51A7C87CD003CD8B5 /* HVWMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWMessageViewController.h; sourceTree = "<group>"; };
+		E07837B61A7C87CD003CD8B5 /* HVWMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWMessageViewController.m; sourceTree = "<group>"; };
+		E07837B81A7C87DC003CD8B5 /* HVWProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWProfileViewController.h; sourceTree = "<group>"; };
+		E07837B91A7C87DC003CD8B5 /* HVWProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWProfileViewController.m; sourceTree = "<group>"; };
+		E07837BB1A7C87EB003CD8B5 /* HVWDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWDiscoverViewController.h; sourceTree = "<group>"; };
+		E07837BC1A7C87EB003CD8B5 /* HVWDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWDiscoverViewController.m; sourceTree = "<group>"; };
+		E07837C21A7C8E42003CD8B5 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
+		E07837C31A7C8E42003CD8B5 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		E07837C51A7C8F0E003CD8B5 /* HVWWeibo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HVWWeibo-Prefix.pch"; sourceTree = "<group>"; };
+		E07837C61A7D06F9003CD8B5 /* HVWNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWNavigationViewController.h; sourceTree = "<group>"; };
+		E07837C71A7D06F9003CD8B5 /* HVWNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWNavigationViewController.m; sourceTree = "<group>"; };
+		E07837CD1A7D2599003CD8B5 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
+		E07837CE1A7D2599003CD8B5 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E078374C1A7C7375003CD8B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E07837651A7C7375003CD8B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E07837461A7C7375003CD8B5 = {
+			isa = PBXGroup;
+			children = (
+				E07837511A7C7375003CD8B5 /* HVWWeibo */,
+				E078376B1A7C7375003CD8B5 /* HVWWeiboTests */,
+				E07837501A7C7375003CD8B5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E07837501A7C7375003CD8B5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E078374F1A7C7375003CD8B5 /* HVWWeibo.app */,
+				E07837681A7C7375003CD8B5 /* HVWWeiboTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E07837511A7C7375003CD8B5 /* HVWWeibo */ = {
+			isa = PBXGroup;
+			children = (
+				E07837951A7C8282003CD8B5 /* Classes */,
+				E078375F1A7C7375003CD8B5 /* Images.xcassets */,
+				E07837521A7C7375003CD8B5 /* Supporting Files */,
+			);
+			path = HVWWeibo;
+			sourceTree = "<group>";
+		};
+		E07837521A7C7375003CD8B5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E07837531A7C7375003CD8B5 /* Info.plist */,
+				E07837541A7C7375003CD8B5 /* main.m */,
+				E07837C51A7C8F0E003CD8B5 /* HVWWeibo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E078376B1A7C7375003CD8B5 /* HVWWeiboTests */ = {
+			isa = PBXGroup;
+			children = (
+				E078376E1A7C7375003CD8B5 /* HVWWeiboTests.m */,
+				E078376C1A7C7375003CD8B5 /* Supporting Files */,
+			);
+			path = HVWWeiboTests;
+			sourceTree = "<group>";
+		};
+		E078376C1A7C7375003CD8B5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E078376D1A7C7375003CD8B5 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E07837951A7C8282003CD8B5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E078379E1A7C8282003CD8B5 /* Main */,
+				E078379A1A7C8282003CD8B5 /* Home */,
+				E07837A41A7C8282003CD8B5 /* Message */,
+				E07837961A7C8282003CD8B5 /* Discover */,
+				E07837A81A7C8282003CD8B5 /* Profile */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E07837961A7C8282003CD8B5 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				E07837971A7C8282003CD8B5 /* Controller */,
+				E07837981A7C8282003CD8B5 /* Model */,
+				E07837991A7C8282003CD8B5 /* View */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		E07837971A7C8282003CD8B5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E07837BB1A7C87EB003CD8B5 /* HVWDiscoverViewController.h */,
+				E07837BC1A7C87EB003CD8B5 /* HVWDiscoverViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E07837981A7C8282003CD8B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E07837991A7C8282003CD8B5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E078379A1A7C8282003CD8B5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E078379B1A7C8282003CD8B5 /* Controller */,
+				E078379C1A7C8282003CD8B5 /* Model */,
+				E078379D1A7C8282003CD8B5 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E078379B1A7C8282003CD8B5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E07837B21A7C87AA003CD8B5 /* HVWHomeViewController.h */,
+				E07837B31A7C87AA003CD8B5 /* HVWHomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E078379C1A7C8282003CD8B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E078379D1A7C8282003CD8B5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E078379E1A7C8282003CD8B5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E07837C91A7D14F4003CD8B5 /* Temp */,
+				E07837C11A7C8E37003CD8B5 /* Category */,
+				E07837A01A7C8282003CD8B5 /* Controller */,
+				E07837A11A7C8282003CD8B5 /* Model */,
+				E07837A21A7C8282003CD8B5 /* Other */,
+				E07837A31A7C8282003CD8B5 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E07837A01A7C8282003CD8B5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E07837AF1A7C85F4003CD8B5 /* HVWTabBarViewController.h */,
+				E07837B01A7C85F4003CD8B5 /* HVWTabBarViewController.m */,
+				E07837C61A7D06F9003CD8B5 /* HVWNavigationViewController.h */,
+				E07837C71A7D06F9003CD8B5 /* HVWNavigationViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E07837A11A7C8282003CD8B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E07837A21A7C8282003CD8B5 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				E07837AC1A7C82BA003CD8B5 /* AppDelegate.h */,
+				E07837AD1A7C82BA003CD8B5 /* AppDelegate.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		E07837A31A7C8282003CD8B5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E07837A41A7C8282003CD8B5 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				E07837A51A7C8282003CD8B5 /* Controller */,
+				E07837A61A7C8282003CD8B5 /* Model */,
+				E07837A71A7C8282003CD8B5 /* View */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		E07837A51A7C8282003CD8B5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E07837B51A7C87CD003CD8B5 /* HVWMessageViewController.h */,
+				E07837B61A7C87CD003CD8B5 /* HVWMessageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E07837A61A7C8282003CD8B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E07837A71A7C8282003CD8B5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E07837A81A7C8282003CD8B5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E07837A91A7C8282003CD8B5 /* Controller */,
+				E07837AA1A7C8282003CD8B5 /* Model */,
+				E07837AB1A7C8282003CD8B5 /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		E07837A91A7C8282003CD8B5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E07837B81A7C87DC003CD8B5 /* HVWProfileViewController.h */,
+				E07837B91A7C87DC003CD8B5 /* HVWProfileViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E07837AA1A7C8282003CD8B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E07837AB1A7C8282003CD8B5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E07837C11A7C8E37003CD8B5 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				E07837C21A7C8E42003CD8B5 /* UIImage+Extension.h */,
+				E07837C31A7C8E42003CD8B5 /* UIImage+Extension.m */,
+				E07837CD1A7D2599003CD8B5 /* UIBarButtonItem+Extension.h */,
+				E07837CE1A7D2599003CD8B5 /* UIBarButtonItem+Extension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		E07837C91A7D14F4003CD8B5 /* Temp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Temp;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E078374E1A7C7375003CD8B5 /* HVWWeibo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E07837721A7C7375003CD8B5 /* Build configuration list for PBXNativeTarget "HVWWeibo" */;
+			buildPhases = (
+				E078374B1A7C7375003CD8B5 /* Sources */,
+				E078374C1A7C7375003CD8B5 /* Frameworks */,
+				E078374D1A7C7375003CD8B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HVWWeibo;
+			productName = HVWWeibo;
+			productReference = E078374F1A7C7375003CD8B5 /* HVWWeibo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E07837671A7C7375003CD8B5 /* HVWWeiboTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E07837751A7C7375003CD8B5 /* Build configuration list for PBXNativeTarget "HVWWeiboTests" */;
+			buildPhases = (
+				E07837641A7C7375003CD8B5 /* Sources */,
+				E07837651A7C7375003CD8B5 /* Frameworks */,
+				E07837661A7C7375003CD8B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E078376A1A7C7375003CD8B5 /* PBXTargetDependency */,
+			);
+			name = HVWWeiboTests;
+			productName = HVWWeiboTests;
+			productReference = E07837681A7C7375003CD8B5 /* HVWWeiboTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E07837471A7C7375003CD8B5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = hellovoidworld;
+				TargetAttributes = {
+					E078374E1A7C7375003CD8B5 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					E07837671A7C7375003CD8B5 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = E078374E1A7C7375003CD8B5;
+					};
+				};
+			};
+			buildConfigurationList = E078374A1A7C7375003CD8B5 /* Build configuration list for PBXProject "HVWWeibo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E07837461A7C7375003CD8B5;
+			productRefGroup = E07837501A7C7375003CD8B5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E078374E1A7C7375003CD8B5 /* HVWWeibo */,
+				E07837671A7C7375003CD8B5 /* HVWWeiboTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E078374D1A7C7375003CD8B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E07837601A7C7375003CD8B5 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E07837661A7C7375003CD8B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E078374B1A7C7375003CD8B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E07837AE1A7C82BA003CD8B5 /* AppDelegate.m in Sources */,
+				E07837551A7C7375003CD8B5 /* main.m in Sources */,
+				E07837C81A7D06F9003CD8B5 /* HVWNavigationViewController.m in Sources */,
+				E07837B71A7C87CD003CD8B5 /* HVWMessageViewController.m in Sources */,
+				E07837B11A7C85F4003CD8B5 /* HVWTabBarViewController.m in Sources */,
+				E07837CF1A7D2599003CD8B5 /* UIBarButtonItem+Extension.m in Sources */,
+				E07837BD1A7C87EB003CD8B5 /* HVWDiscoverViewController.m in Sources */,
+				E07837BA1A7C87DC003CD8B5 /* HVWProfileViewController.m in Sources */,
+				E07837B41A7C87AA003CD8B5 /* HVWHomeViewController.m in Sources */,
+				E07837C41A7C8E42003CD8B5 /* UIImage+Extension.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E07837641A7C7375003CD8B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E078376F1A7C7375003CD8B5 /* HVWWeiboTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E078376A1A7C7375003CD8B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E078374E1A7C7375003CD8B5 /* HVWWeibo */;
+			targetProxy = E07837691A7C7375003CD8B5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E07837701A7C7375003CD8B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E07837711A7C7375003CD8B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E07837731A7C7375003CD8B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HVWWeibo/HVWWeibo-Prefix.pch";
+				INFOPLIST_FILE = HVWWeibo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E07837741A7C7375003CD8B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HVWWeibo/HVWWeibo-Prefix.pch";
+				INFOPLIST_FILE = HVWWeibo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E07837761A7C7375003CD8B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HVWWeiboTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HVWWeibo.app/HVWWeibo";
+			};
+			name = Debug;
+		};
+		E07837771A7C7375003CD8B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HVWWeiboTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HVWWeibo.app/HVWWeibo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E078374A1A7C7375003CD8B5 /* Build configuration list for PBXProject "HVWWeibo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E07837701A7C7375003CD8B5 /* Debug */,
+				E07837711A7C7375003CD8B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E07837721A7C7375003CD8B5 /* Build configuration list for PBXNativeTarget "HVWWeibo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E07837731A7C7375003CD8B5 /* Debug */,
+				E07837741A7C7375003CD8B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E07837751A7C7375003CD8B5 /* Build configuration list for PBXNativeTarget "HVWWeiboTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E07837761A7C7375003CD8B5 /* Debug */,
+				E07837771A7C7375003CD8B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E07837471A7C7375003CD8B5 /* Project object */;
+}
