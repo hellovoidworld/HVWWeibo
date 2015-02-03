@@ -17,6 +17,7 @@
     #import <Foundation/Foundation.h>
     #import "UIImage+Extension.h"
     #import "UIBarButtonItem+Extension.h"
+    #import "UIView+Extension.h"
 #endif
 
 // 测试用log
@@ -32,5 +33,7 @@
 // 随机颜色
 #define RandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0  blue:arc4random_uniform(256)/255.0  alpha:1.0]
 
+// 导航栏标题字体
+#define HVWNavigationTitleFont [UIFont systemFontOfSize:20];
 
 #endif

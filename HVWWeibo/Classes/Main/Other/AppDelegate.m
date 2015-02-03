@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "HVWTabBarViewController.h"
+#import "HVWNewFeatureViewController.h"
 
 @interface AppDelegate ()
 
@@ -27,10 +28,33 @@
     self.window = [[UIWindow alloc] init];
     self.window.frame = [UIScreen mainScreen].bounds;
     
-    // 创建根控制器
-    HVWTabBarViewController *tabVC = [[HVWTabBarViewController alloc] init];
-    self.window.rootViewController = tabVC;
+    /** 新版本特性 */
+    // app现在的版本
+    // 由于使用的时Core Foundation的东西，需要桥接
+    NSString *versionKey = (__bridge NSString*) kCFBundleVersionKey;
+    NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
+    NSString *currentVersion = [infoDic objectForKey:versionKey];
     
+    // 上次使用的版本
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *lastVersion = [defaults stringForKey:versionKey];
+
+    // 如果版本变动了，存储新的版本号并启动新版本特性图
+    if (![lastVersion isEqualToString:currentVersion]) {
+        
+        // 存储
+        [defaults setObject:currentVersion forKey:versionKey];
+        [defaults synchronize];
+        
+        // 开启app显示新特性
+        HVWNewFeatureViewController *newFeatureVC = [[HVWNewFeatureViewController alloc] init];
+        self.window.rootViewController = newFeatureVC;
+    } else {
+        // 创建根控制器
+        HVWTabBarViewController *tabVC = [[HVWTabBarViewController alloc] init];
+        self.window.rootViewController = tabVC;
+    }
+
     [self.window makeKeyAndVisible];
     
     return YES;

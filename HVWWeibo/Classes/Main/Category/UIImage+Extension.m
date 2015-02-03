@@ -10,6 +10,7 @@
 
 @implementation UIImage (Extension)
 
+/** 自动给iOS7或以上系统使用带_os7结尾的图片 */
 + (UIImage *) imageWithNamed:(NSString *) imageName {
     UIImage *image = nil;
     
@@ -24,6 +25,12 @@
     }
     
     return image;
+}
+
+/** 保护性拉伸图片，通常用来使用小图做背景 */
++ (UIImage *) resizedImage:(NSString *) imageName {
+    UIImage *image = [UIImage imageNamed:imageName];
+    return [image stretchableImageWithLeftCapWidth:image.size.width * 0.5 topCapHeight:image.size.height * 0.5];
 }
 
 @end

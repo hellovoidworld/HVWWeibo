@@ -7,8 +7,12 @@
 //
 
 #import "HVWHomeViewController.h"
+#import "HVWNavigationBarTitleButton.h"
+#import "HVWPopMenu.h"
 
-@interface HVWHomeViewController ()
+@interface HVWHomeViewController () <HVWPopMenuDelegate>
+
+@property(nonatomic, assign, getter=isTitleButtonExtended) BOOL titleButtonExtended;
 
 @end
 
@@ -23,6 +27,20 @@
     
     // 右边按钮
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:@"navigationbar_pop" hightlightedImage:@"navigationbar_pop_highlighted" target:self selector:@selector(pop)];
+    
+    // 设置标题按钮
+    HVWNavigationBarTitleButton *titleButton = [[HVWNavigationBarTitleButton alloc] init];
+    titleButton.height = 35;
+    titleButton.width = 100;
+    [titleButton setTitle:@"首页" forState:UIControlStateNormal];
+    [titleButton setImage:[UIImage imageWithNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
+    // 设置背景图片
+    [titleButton setBackgroundImage:[UIImage resizedImage:@"navigationbar_filter_background_highlighted"] forState:UIControlStateHighlighted];
+    
+    // 监听按钮点击事件，替换图标
+    [titleButton addTarget:self action:@selector(titleButtonClickd:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.titleView = titleButton;
 }
 
 #pragma mark - UITableVidwDataSource
@@ -79,6 +97,38 @@
 /** 右边导航栏按钮事件 */
 - (void) pop {
     HVWLog(@"pop");
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    HVWLog(@"-----%@", [defaults objectForKey:@"test"]);
+//    [defaults setObject:@"kkkkkkk" forKey:@"test"];
+//    [defaults synchronize];
+}
+
+/** 标题栏按钮点击事件 */
+- (void) titleButtonClickd:(UIButton *) button {
+    self.titleButtonExtended = !self.titleButtonExtended;
+    
+    if (self.isTitleButtonExtended) {
+        [button setImage:[UIImage imageWithNamed:@"navigationbar_arrow_up"] forState:UIControlStateNormal];
+        
+        // 添加弹出菜单
+        UITableView *tableView = [[UITableView alloc] init];
+        HVWPopMenu *popMenu = [HVWPopMenu popMenuWithContentView:tableView];
+        popMenu.delegate = self;
+        popMenu.dimCoverLayer = YES; // 模糊遮盖
+        popMenu.popMenuArrowDirection = PopMenuArrowDirectionMid; // 中部箭头
+        
+        // 弹出
+        [popMenu showMenuInRect:CGRectMake(50, 55, 200, 300)];
+        
+    } else {
+        [button setImage:[UIImage imageWithNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
+    }
+}
+
+#pragma mark - HVWPopMenuDelegate
+- (void)popMenuDidHideMenu:(HVWPopMenu *)popMenu {
+    UIButton *titleButton = (UIButton *)self.navigationItem.titleView;
+    [self titleButtonClickd:titleButton];
 }
 
 @end

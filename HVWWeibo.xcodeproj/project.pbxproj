@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E027C2221A7FC5A5001960BB /* HVWPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E027C2211A7FC5A5001960BB /* HVWPopMenu.m */; };
+		E027C2291A7FFD40001960BB /* HVWTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E027C2281A7FFD40001960BB /* HVWTabBar.m */; };
+		E027C2301A7FFDA0001960BB /* HVWComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E027C22F1A7FFDA0001960BB /* HVWComposeViewController.m */; };
 		E07837551A7C7375003CD8B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E07837541A7C7375003CD8B5 /* main.m */; };
 		E07837601A7C7375003CD8B5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E078375F1A7C7375003CD8B5 /* Images.xcassets */; };
 		E078376F1A7C7375003CD8B5 /* HVWWeiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E078376E1A7C7375003CD8B5 /* HVWWeiboTests.m */; };
@@ -19,6 +22,10 @@
 		E07837C41A7C8E42003CD8B5 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E07837C31A7C8E42003CD8B5 /* UIImage+Extension.m */; };
 		E07837C81A7D06F9003CD8B5 /* HVWNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E07837C71A7D06F9003CD8B5 /* HVWNavigationViewController.m */; };
 		E07837CF1A7D2599003CD8B5 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E07837CE1A7D2599003CD8B5 /* UIBarButtonItem+Extension.m */; };
+		E07D37C41A7F0B8F00CF81E8 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E07D37C31A7F0B8F00CF81E8 /* UIView+Extension.m */; };
+		E07D37C71A7F143400CF81E8 /* HVWNavigationBarTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E07D37C61A7F143400CF81E8 /* HVWNavigationBarTitleButton.m */; };
+		E0913B881A808B060066324E /* HVWNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0913B871A808B060066324E /* HVWNewFeatureViewController.m */; };
+		E0C5ADC71A7E8900002D7379 /* HVWSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C5ADC61A7E8900002D7379 /* HVWSearchBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E027C2201A7FC5A5001960BB /* HVWPopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWPopMenu.h; sourceTree = "<group>"; };
+		E027C2211A7FC5A5001960BB /* HVWPopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWPopMenu.m; sourceTree = "<group>"; };
+		E027C2271A7FFD40001960BB /* HVWTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWTabBar.h; sourceTree = "<group>"; };
+		E027C2281A7FFD40001960BB /* HVWTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWTabBar.m; sourceTree = "<group>"; };
+		E027C22E1A7FFDA0001960BB /* HVWComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWComposeViewController.h; sourceTree = "<group>"; };
+		E027C22F1A7FFDA0001960BB /* HVWComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWComposeViewController.m; sourceTree = "<group>"; };
 		E078374F1A7C7375003CD8B5 /* HVWWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HVWWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E07837531A7C7375003CD8B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E07837541A7C7375003CD8B5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -58,6 +71,14 @@
 		E07837C71A7D06F9003CD8B5 /* HVWNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWNavigationViewController.m; sourceTree = "<group>"; };
 		E07837CD1A7D2599003CD8B5 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		E07837CE1A7D2599003CD8B5 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		E07D37C21A7F0B8F00CF81E8 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		E07D37C31A7F0B8F00CF81E8 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		E07D37C51A7F143400CF81E8 /* HVWNavigationBarTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWNavigationBarTitleButton.h; sourceTree = "<group>"; };
+		E07D37C61A7F143400CF81E8 /* HVWNavigationBarTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWNavigationBarTitleButton.m; sourceTree = "<group>"; };
+		E0913B861A808B060066324E /* HVWNewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWNewFeatureViewController.h; sourceTree = "<group>"; };
+		E0913B871A808B060066324E /* HVWNewFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWNewFeatureViewController.m; sourceTree = "<group>"; };
+		E0C5ADC51A7E8900002D7379 /* HVWSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWSearchBar.h; sourceTree = "<group>"; };
+		E0C5ADC61A7E8900002D7379 /* HVWSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWSearchBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +99,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E027C2261A7FFD40001960BB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E027C2271A7FFD40001960BB /* HVWTabBar.h */,
+				E027C2281A7FFD40001960BB /* HVWTabBar.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E027C22A1A7FFD81001960BB /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				E027C22B1A7FFD81001960BB /* Controller */,
+				E027C22C1A7FFD81001960BB /* Model */,
+				E027C22D1A7FFD81001960BB /* View */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		E027C22B1A7FFD81001960BB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E027C22E1A7FFDA0001960BB /* HVWComposeViewController.h */,
+				E027C22F1A7FFDA0001960BB /* HVWComposeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E027C22C1A7FFD81001960BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E027C22D1A7FFD81001960BB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E07837461A7C7375003CD8B5 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +199,8 @@
 		E07837951A7C8282003CD8B5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E027C22A1A7FFD81001960BB /* Compose */,
+				E0913B821A808A790066324E /* NewFeature */,
 				E078379E1A7C8282003CD8B5 /* Main */,
 				E078379A1A7C8282003CD8B5 /* Home */,
 				E07837A41A7C8282003CD8B5 /* Message */,
@@ -174,6 +239,8 @@
 		E07837991A7C8282003CD8B5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E0C5ADC51A7E8900002D7379 /* HVWSearchBar.h */,
+				E0C5ADC61A7E8900002D7379 /* HVWSearchBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -207,6 +274,10 @@
 		E078379D1A7C8282003CD8B5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E07D37C51A7F143400CF81E8 /* HVWNavigationBarTitleButton.h */,
+				E07D37C61A7F143400CF81E8 /* HVWNavigationBarTitleButton.m */,
+				E027C2201A7FC5A5001960BB /* HVWPopMenu.h */,
+				E027C2211A7FC5A5001960BB /* HVWPopMenu.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -219,7 +290,7 @@
 				E07837A01A7C8282003CD8B5 /* Controller */,
 				E07837A11A7C8282003CD8B5 /* Model */,
 				E07837A21A7C8282003CD8B5 /* Other */,
-				E07837A31A7C8282003CD8B5 /* View */,
+				E027C2261A7FFD40001960BB /* View */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -249,13 +320,6 @@
 				E07837AD1A7C82BA003CD8B5 /* AppDelegate.m */,
 			);
 			path = Other;
-			sourceTree = "<group>";
-		};
-		E07837A31A7C8282003CD8B5 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		E07837A41A7C8282003CD8B5 /* Message */ = {
@@ -331,6 +395,8 @@
 				E07837C31A7C8E42003CD8B5 /* UIImage+Extension.m */,
 				E07837CD1A7D2599003CD8B5 /* UIBarButtonItem+Extension.h */,
 				E07837CE1A7D2599003CD8B5 /* UIBarButtonItem+Extension.m */,
+				E07D37C21A7F0B8F00CF81E8 /* UIView+Extension.h */,
+				E07D37C31A7F0B8F00CF81E8 /* UIView+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -340,6 +406,39 @@
 			children = (
 			);
 			name = Temp;
+			sourceTree = "<group>";
+		};
+		E0913B821A808A790066324E /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				E0913B831A808A790066324E /* Controller */,
+				E0913B841A808A790066324E /* Model */,
+				E0913B851A808A790066324E /* View */,
+			);
+			path = NewFeature;
+			sourceTree = "<group>";
+		};
+		E0913B831A808A790066324E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E0913B861A808B060066324E /* HVWNewFeatureViewController.h */,
+				E0913B871A808B060066324E /* HVWNewFeatureViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E0913B841A808A790066324E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E0913B851A808A790066324E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,16 +539,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0913B881A808B060066324E /* HVWNewFeatureViewController.m in Sources */,
 				E07837AE1A7C82BA003CD8B5 /* AppDelegate.m in Sources */,
 				E07837551A7C7375003CD8B5 /* main.m in Sources */,
 				E07837C81A7D06F9003CD8B5 /* HVWNavigationViewController.m in Sources */,
 				E07837B71A7C87CD003CD8B5 /* HVWMessageViewController.m in Sources */,
+				E027C2291A7FFD40001960BB /* HVWTabBar.m in Sources */,
+				E0C5ADC71A7E8900002D7379 /* HVWSearchBar.m in Sources */,
 				E07837B11A7C85F4003CD8B5 /* HVWTabBarViewController.m in Sources */,
+				E07D37C41A7F0B8F00CF81E8 /* UIView+Extension.m in Sources */,
+				E07D37C71A7F143400CF81E8 /* HVWNavigationBarTitleButton.m in Sources */,
 				E07837CF1A7D2599003CD8B5 /* UIBarButtonItem+Extension.m in Sources */,
 				E07837BD1A7C87EB003CD8B5 /* HVWDiscoverViewController.m in Sources */,
 				E07837BA1A7C87DC003CD8B5 /* HVWProfileViewController.m in Sources */,
 				E07837B41A7C87AA003CD8B5 /* HVWHomeViewController.m in Sources */,
+				E027C2221A7FC5A5001960BB /* HVWPopMenu.m in Sources */,
 				E07837C41A7C8E42003CD8B5 /* UIImage+Extension.m in Sources */,
+				E027C2301A7FFDA0001960BB /* HVWComposeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,6 +733,7 @@
 				E07837741A7C7375003CD8B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E07837751A7C7375003CD8B5 /* Build configuration list for PBXNativeTarget "HVWWeiboTests" */ = {
 			isa = XCConfigurationList;
@@ -635,6 +742,7 @@
 				E07837771A7C7375003CD8B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

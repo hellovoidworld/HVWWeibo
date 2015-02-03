@@ -22,6 +22,10 @@
     // 一定要设置frame，才能显示
     button.frame = CGRectMake(0, 0, image.size.width, image.size.height);
     
+    // 设置不自动调整按钮
+    button.adjustsImageWhenHighlighted = NO;
+    button.adjustsImageWhenDisabled = NO;
+    
     // 设置事件
     [button addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
     

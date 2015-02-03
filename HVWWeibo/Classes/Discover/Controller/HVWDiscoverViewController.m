@@ -7,6 +7,7 @@
 //
 
 #import "HVWDiscoverViewController.h"
+#import "HVWSearchBar.h"
 
 @interface HVWDiscoverViewController ()
 
@@ -17,6 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 添加搜索框
+    HVWSearchBar *searchBar = [[HVWSearchBar alloc] init];
+    searchBar.frame = CGRectMake(0, 0, 300, 40);
+    self.navigationItem.titleView = searchBar;
 }
 
 #pragma mark - UITableVidwDataSource

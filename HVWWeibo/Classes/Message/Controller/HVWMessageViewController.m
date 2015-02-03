@@ -17,6 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 添加导航控制器按钮
+    // 左边按钮
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"写私信" style:UIBarButtonItemStyleDone target:nil action:nil];
+    self.navigationItem.leftBarButtonItem.enabled = NO;
+    
+    // 右边按钮
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"写私信" style:UIBarButtonItemStyleDone target:nil action:nil];
+    
 }
 
 #pragma mark - UITableVidwDataSource

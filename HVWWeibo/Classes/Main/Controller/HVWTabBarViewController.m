@@ -12,8 +12,10 @@
 #import "HVWDiscoverViewController.h"
 #import "HVWProfileViewController.h"
 #import "HVWNavigationViewController.h"
+#import "HVWTabBar.h"
+#import "HVWComposeViewController.h"
 
-@interface HVWTabBarViewController ()
+@interface HVWTabBarViewController () <HVWTabBarDelegate>
 
 @end
 
@@ -22,6 +24,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // 使用自定义的TabBar
+    HVWTabBar *hvwTabBar = [[HVWTabBar alloc] init];
+    hvwTabBar.hvwTabBarDelegate = self;
+    // 重设tabBar，由于tabBar是只读成员，使用KVC相当于直接修改_tabBar
+    [self setValue:hvwTabBar forKey:@"tabBar"];
     
     // 添加子控制器
     // 首页
@@ -46,7 +54,7 @@
 - (void) addChildViewController:(UIViewController *) viewController WithTitle:(NSString *) title image:(NSString *) imageName seletectedImage:(NSString *) selectedImageName {
     
     // 设置随机背景色
-//    viewController.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0  blue:arc4random_uniform(256)/255.0  alpha:1.0];
+//    viewController.view.backgroundColor = RandomColor;
     
     // 设置标题，直接设置title可以同时设置tabBarItem和navigationItem的title
 //    viewController.tabBarItem.title = title;
@@ -69,5 +77,19 @@
     [self addChildViewController:nav];
 }
 
+#pragma mark - HVWTabBarDelegate
+/** “+”按钮点击代理方法 */
+- (void)tabBarDidComposeButtonClick:(HVWTabBar *)tabBar {
+    HVWComposeViewController *composeView = [[HVWComposeViewController alloc] init];
+  
+    // tabBarController不是由navigationController弹出来的，没有navigationController
+//    [self.navigationController pushViewController:vc animated:YES];
+//    HVWLog(@"%@", self.navigationController); // null
+    
+    // 为了使用导航栏，使用NavigationController包装一下
+    HVWNavigationViewController *nav = [[HVWNavigationViewController alloc] initWithRootViewController:composeView];
+    // 使用modal方式弹出
+    [self presentViewController:nav animated:YES completion:nil];
+}
 
 @end
