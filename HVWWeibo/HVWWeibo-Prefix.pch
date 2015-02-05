@@ -36,4 +36,11 @@
 // 导航栏标题字体
 #define HVWNavigationTitleFont [UIFont systemFontOfSize:20];
 
+// 授权信息
+#define HVWAppKey @"3942775926"
+#define HVWAppSecret @"cc577953b2aa3aa8ea220fd15775ea35"
+#define HVWGrantType  @"authorization_code"
+#define HVWRedirecgURI @"http://www.cnblogs.com/hellovoidworld/"
+
+
 #endif
