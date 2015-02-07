@@ -11,6 +11,6 @@
 @interface HVWPic : NSObject
 
 /** 缩略图片地址，没有时不返回此字段 */
-@property(nonatomic, strong) NSString *thumbnail_pic;
+@property(nonatomic, copy) NSString *thumbnail_pic;
 
 @end

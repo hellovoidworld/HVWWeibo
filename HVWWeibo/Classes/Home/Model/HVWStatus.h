@@ -11,8 +11,11 @@
 
 @interface HVWStatus : NSObject
 
+/** 字符串型的微博ID */
+@property(nonatomic, copy) NSString *idstr;
+
 /** 微博信息内容 */
-@property(nonatomic, strong) NSString *text;
+@property(nonatomic, copy) NSString *text;
 
 /** 微博作者的用户信息字段 详细 */
 @property(nonatomic, strong) HVWUser *user;

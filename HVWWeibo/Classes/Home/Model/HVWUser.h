@@ -11,9 +11,9 @@
 @interface HVWUser : NSObject
 
 /** 友好显示名称 */
-@property(nonatomic, strong) NSString *name;
+@property(nonatomic, copy) NSString *name;
 
 /** 用户头像地址（中图），50×50像素 */
-@property(nonatomic, strong) NSString *profile_image_url;
+@property(nonatomic, copy) NSString *profile_image_url;
 
 @end

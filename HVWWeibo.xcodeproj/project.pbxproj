@@ -40,6 +40,10 @@
 		E07837CF1A7D2599003CD8B5 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E07837CE1A7D2599003CD8B5 /* UIBarButtonItem+Extension.m */; };
 		E07D37C41A7F0B8F00CF81E8 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E07D37C31A7F0B8F00CF81E8 /* UIView+Extension.m */; };
 		E07D37C71A7F143400CF81E8 /* HVWNavigationBarTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E07D37C61A7F143400CF81E8 /* HVWNavigationBarTitleButton.m */; };
+		E090E6641A84BC2100547AC0 /* HVWLoadMoreWeiboFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = E090E6631A84BC2100547AC0 /* HVWLoadMoreWeiboFooterView.m */; };
+		E090E6671A85008C00547AC0 /* HVWComposeTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E090E6661A85008C00547AC0 /* HVWComposeTextView.m */; };
+		E090E66A1A85412500547AC0 /* HVWComposeToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E090E6691A85412500547AC0 /* HVWComposeToolBar.m */; };
+		E090E66D1A854D8300547AC0 /* HVWComposeImageDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = E090E66C1A854D8300547AC0 /* HVWComposeImageDisplayView.m */; };
 		E0913B881A808B060066324E /* HVWNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0913B871A808B060066324E /* HVWNewFeatureViewController.m */; };
 		E0C0E4C31A8340DD00A7B07D /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C0E4C21A8340DD00A7B07D /* Foundation+Log.m */; };
 		E0C0E4C61A83435E00A7B07D /* HVWUser.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C0E4C51A83435E00A7B07D /* HVWUser.m */; };
@@ -149,6 +153,14 @@
 		E07D37C31A7F0B8F00CF81E8 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		E07D37C51A7F143400CF81E8 /* HVWNavigationBarTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWNavigationBarTitleButton.h; sourceTree = "<group>"; };
 		E07D37C61A7F143400CF81E8 /* HVWNavigationBarTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWNavigationBarTitleButton.m; sourceTree = "<group>"; };
+		E090E6621A84BC2100547AC0 /* HVWLoadMoreWeiboFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWLoadMoreWeiboFooterView.h; sourceTree = "<group>"; };
+		E090E6631A84BC2100547AC0 /* HVWLoadMoreWeiboFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWLoadMoreWeiboFooterView.m; sourceTree = "<group>"; };
+		E090E6651A85008C00547AC0 /* HVWComposeTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWComposeTextView.h; sourceTree = "<group>"; };
+		E090E6661A85008C00547AC0 /* HVWComposeTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWComposeTextView.m; sourceTree = "<group>"; };
+		E090E6681A85412500547AC0 /* HVWComposeToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWComposeToolBar.h; sourceTree = "<group>"; };
+		E090E6691A85412500547AC0 /* HVWComposeToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWComposeToolBar.m; sourceTree = "<group>"; };
+		E090E66B1A854D8300547AC0 /* HVWComposeImageDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWComposeImageDisplayView.h; sourceTree = "<group>"; };
+		E090E66C1A854D8300547AC0 /* HVWComposeImageDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWComposeImageDisplayView.m; sourceTree = "<group>"; };
 		E0913B861A808B060066324E /* HVWNewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWNewFeatureViewController.h; sourceTree = "<group>"; };
 		E0913B871A808B060066324E /* HVWNewFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWNewFeatureViewController.m; sourceTree = "<group>"; };
 		E0C0E4C21A8340DD00A7B07D /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
@@ -264,6 +276,12 @@
 		E027C22D1A7FFD81001960BB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E090E6651A85008C00547AC0 /* HVWComposeTextView.h */,
+				E090E6661A85008C00547AC0 /* HVWComposeTextView.m */,
+				E090E6681A85412500547AC0 /* HVWComposeToolBar.h */,
+				E090E6691A85412500547AC0 /* HVWComposeToolBar.m */,
+				E090E66B1A854D8300547AC0 /* HVWComposeImageDisplayView.h */,
+				E090E66C1A854D8300547AC0 /* HVWComposeImageDisplayView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -505,6 +523,8 @@
 				E07D37C61A7F143400CF81E8 /* HVWNavigationBarTitleButton.m */,
 				E027C2201A7FC5A5001960BB /* HVWPopMenu.h */,
 				E027C2211A7FC5A5001960BB /* HVWPopMenu.m */,
+				E090E6621A84BC2100547AC0 /* HVWLoadMoreWeiboFooterView.h */,
+				E090E6631A84BC2100547AC0 /* HVWLoadMoreWeiboFooterView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -855,10 +875,12 @@
 				E0C5ADC71A7E8900002D7379 /* HVWSearchBar.m in Sources */,
 				E0C0E5101A83583100A7B07D /* NSObject+MJCoding.m in Sources */,
 				E07837B11A7C85F4003CD8B5 /* HVWTabBarViewController.m in Sources */,
+				E090E66A1A85412500547AC0 /* HVWComposeToolBar.m in Sources */,
 				E07D37C41A7F0B8F00CF81E8 /* UIView+Extension.m in Sources */,
 				E0C0E4F31A83512A00A7B07D /* SDWebImageDownloaderOperation.m in Sources */,
 				E05FD2A11A827AF900B5CDE3 /* AFHTTPSessionManager.m in Sources */,
 				E0C0E4CC1A83437400A7B07D /* HVWPic.m in Sources */,
+				E090E66D1A854D8300547AC0 /* HVWComposeImageDisplayView.m in Sources */,
 				E07D37C71A7F143400CF81E8 /* HVWNavigationBarTitleButton.m in Sources */,
 				E0C0E4C91A83436C00A7B07D /* HVWStatus.m in Sources */,
 				E07837CF1A7D2599003CD8B5 /* UIBarButtonItem+Extension.m in Sources */,
@@ -875,12 +897,14 @@
 				E0C0E4C61A83435E00A7B07D /* HVWUser.m in Sources */,
 				E0C0E4EE1A83512A00A7B07D /* NSData+ImageContentType.m in Sources */,
 				E05FD2B41A829D2E00B5CDE3 /* HVWAccountInfoTool.m in Sources */,
+				E090E6641A84BC2100547AC0 /* HVWLoadMoreWeiboFooterView.m in Sources */,
 				E07837C41A7C8E42003CD8B5 /* UIImage+Extension.m in Sources */,
 				E05FD2A21A827AF900B5CDE3 /* AFNetworkReachabilityManager.m in Sources */,
 				E05FD2A61A827AF900B5CDE3 /* AFURLResponseSerialization.m in Sources */,
 				E0C0E5121A83583100A7B07D /* NSObject+MJKeyValue.m in Sources */,
 				E0C0E4F61A83512A00A7B07D /* UIButton+WebCache.m in Sources */,
 				E0C0E4F21A83512A00A7B07D /* SDWebImageDownloader.m in Sources */,
+				E090E6671A85008C00547AC0 /* HVWComposeTextView.m in Sources */,
 				E027C2301A7FFDA0001960BB /* HVWComposeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
