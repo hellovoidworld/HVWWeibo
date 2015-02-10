@@ -47,7 +47,6 @@
     // 我
     HVWProfileViewController *profileVC = [[HVWProfileViewController alloc] init];
     [self addChildViewController:profileVC WithTitle:@"我" image:@"tabbar_profile" seletectedImage:@"tabbar_profile_selected"];
-    
 }
 
 /** 添加tab子控制器 */

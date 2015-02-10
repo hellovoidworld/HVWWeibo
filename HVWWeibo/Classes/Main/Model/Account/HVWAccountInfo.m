@@ -33,6 +33,7 @@
         self.expires_in = [aDecoder decodeObjectForKey:@"expires_in"];
         self.expires_time = [aDecoder decodeObjectForKey:@"expires_time"];
         self.uid = [aDecoder decodeObjectForKey:@"uid"];
+        self.screen_name = [aDecoder decodeObjectForKey:@"screen_name"];
     }
     
     return self;
@@ -44,6 +45,7 @@
     [aCoder encodeObject:self.expires_in forKey:@"expires_in"];
     [aCoder encodeObject:self.expires_time forKey:@"expires_time"];
     [aCoder encodeObject:self.uid forKey:@"uid"];
+    [aCoder encodeObject:self.screen_name forKey:@"screen_name"];
 }
 
 @end

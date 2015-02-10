@@ -12,12 +12,19 @@
 
 @implementation HVWComposeImageDisplayView
 
+- (NSMutableArray *)images {
+    if (nil == _images) {
+        _images = [NSMutableArray array];
+    }
+    return _images;
+}
+
 /** 添加图片 */
 - (void) addImage:(UIImage *) image {
-    HVWLog(@"addImage");
+    [self.images addObject:image];
+    
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
-    
     [self addSubview:imageView];
     
     [self setNeedsDisplay];

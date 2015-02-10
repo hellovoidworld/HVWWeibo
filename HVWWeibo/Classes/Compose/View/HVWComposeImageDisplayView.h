@@ -10,6 +10,8 @@
 
 @interface HVWComposeImageDisplayView : UIView
 
+@property(nonatomic, strong) NSMutableArray *images;
+
 - (void) addImage:(UIImage *) image;
 
 @end

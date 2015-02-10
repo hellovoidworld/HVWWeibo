@@ -8,10 +8,10 @@
 
 #import "HVWOAuthViewController.h"
 #import "MBProgressHUD+MJ.h"
-#import "AFNetworking.h"
 #import "HVWControllerTool.h"
 #import "HVWAccountInfo.h"
 #import "HVWAccountInfoTool.h"
+#import "HVWNetworkTool.h"
 
 @interface HVWOAuthViewController () <UIWebViewDelegate>
 
@@ -76,9 +76,6 @@
 
 /** 根据access_code获取access_token */
 - (void) accessTokenWithAccessCode:(NSString *) accessCode {
-    // 创建AFN的http操作请求管理者
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-
     // 参数设置
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"client_id"] = HVWAppKey;
@@ -88,7 +85,7 @@
     param[@"redirect_uri"] = HVWRedirecgURI;
     
     // 发送请求
-    [manager POST:@"https://api.weibo.com/oauth2/access_token" parameters:param success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
+    [HVWNetworkTool post:@"https://api.weibo.com/oauth2/access_token" parameters:param success:^(id responseObject) {
         [MBProgressHUD hideHUD];
         
         // 返回的是用户信息字典
@@ -98,11 +95,10 @@
         
         // 设置根控制器
         [HVWControllerTool chooseRootViewController];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSError *error) {
         [MBProgressHUD hideHUD];
         HVWLog(@"请求access_token失败 ----> %@", error);
     }];
-    
 }
 
 @end

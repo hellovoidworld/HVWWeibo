@@ -9,7 +9,6 @@
 #import "HVWHomeViewController.h"
 #import "HVWNavigationBarTitleButton.h"
 #import "HVWPopMenu.h"
-#import "AFNetworking.h"
 #import "HVWAccountInfoTool.h"
 #import "HVWAccountInfo.h"
 #import "HVWStatus.h"
@@ -17,6 +16,11 @@
 #import "UIImageView+WebCache.h"
 #import "MJExtension.h"
 #import "HVWLoadMoreWeiboFooterView.h"
+#import "HVWStatusTool.h"
+#import "HVWHomeStatusParam.h"
+#import "HVWHomeStatusResult.h"
+#import "HVWUserTool.h"
+#import "HVWUserParam.h"
 
 @interface HVWHomeViewController () <HVWPopMenuDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -29,6 +33,9 @@
 /** 上拉刷新控件 */
 @property(nonatomic, strong) HVWLoadMoreWeiboFooterView *loadMoreFooter;
 
+/** 导航栏标题按钮 */
+@property(nonatomic, strong) HVWNavigationBarTitleButton *titleButton;
+
 @end
 
 @implementation HVWHomeViewController
@@ -40,6 +47,9 @@
     
     // 设置导航栏
     [self setupNavigationBar];
+    
+    // 获取用户信息
+    [self setupUserInfo];
     
     // 添加刷新器
 //    [self addRefresh];
@@ -80,29 +90,19 @@
 - (void) refreshLatestWeibo:(UIRefreshControl *) refreshControl {
     // 把最新的微博数据加到原来的微博前面
     
-    // 创建AFNetworking的http操作中管理器
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    
     // 设置参数
-    NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    param[@"access_token"] = [HVWAccountInfoTool accountInfo].access_token;
-    
     /** 若指定此参数，则返回ID比since_id大的微博（即比since_id时间晚的微博），默认为0。*/
+    HVWHomeStatusParam *param = [[HVWHomeStatusParam alloc] init];
+    
     HVWStatus *firstStatus = [self.statuses firstObject];
     if (firstStatus) {
-        param[@"since_id"] = firstStatus.idstr;
+        param.since_id = [NSNumber numberWithDouble:firstStatus.idstr.doubleValue];
     }
     
     // 发送请求
-    [manager GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:param success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
-        //        HVWLog(@"获取微博数据成功-------%@", responseObject);
-        
-        // 保存数据到内存
-        NSArray *dataArray = responseObject[@"statuses"];
-        
-        // 得到新微博数据
-        // 使用MJExtension直接进行字典-模型转换
-        NSArray *newStatus = [HVWStatus objectArrayWithKeyValuesArray:dataArray];
+    [HVWStatusTool statusWithParameters:param success:^(HVWHomeStatusResult *statusResult) {
+        // 获取微博数组
+        NSArray *newStatus = statusResult.statuses;
         
         // 插入到微博数据数组的最前面
         NSRange newWeiboRange = NSMakeRange(0, newStatus.count);
@@ -114,7 +114,7 @@
         
         // 刷新提示
         [self showRefreshIndicator:newStatus.count];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSError *error) {
         HVWLog(@"获取微博数据失败------%@", error);
     }];
     
@@ -126,36 +126,26 @@
 - (void) loadMoreWeiboData {
     // 把更多的微博数据加到原来的微博后面
     
-    // 创建AFNetworking的http操作中管理器
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    
     // 设置参数
-    NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    param[@"access_token"] = [HVWAccountInfoTool accountInfo].access_token;
+    HVWHomeStatusParam *param = [[HVWHomeStatusParam alloc] init];
     
     /** 若指定此参数，则返回ID小于或等于max_id的微博，默认为0。*/
     HVWStatus *lastStatus = [self.statuses lastObject];
     if (lastStatus) {
-        param[@"max_id"] = @([lastStatus.idstr longLongValue] - 1);
+        param.max_id = @([lastStatus.idstr longLongValue] - 1);
     }
     
     // 发送请求
-    [manager GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:param success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
-        //        HVWLog(@"获取微博数据成功-------%@", responseObject);
-        
-        // 保存数据到内存
-        NSArray *dataArray = responseObject[@"statuses"];
-        
+    [HVWStatusTool statusWithParameters:param success:^(HVWHomeStatusResult *statusResult) {
         // 得到新微博数据
-        // 使用MJExtension直接进行字典-模型转换
-        NSArray *newStatus = [HVWStatus objectArrayWithKeyValuesArray:dataArray];
+        NSArray *newStatus = statusResult.statuses;
         
         // 插入到微博数据数组的后面
         [self.statuses addObjectsFromArray:newStatus];
         
         // 刷新数据
         [self.tableView reloadData];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSError *error) {
         HVWLog(@"获取微博数据失败------%@", error);
     }];
     
@@ -212,8 +202,18 @@
     // 设置标题按钮
     HVWNavigationBarTitleButton *titleButton = [[HVWNavigationBarTitleButton alloc] init];
     titleButton.height = 35;
-    titleButton.width = 100;
-    [titleButton setTitle:@"首页" forState:UIControlStateNormal];
+    
+    // 保存到成员属性
+    self.titleButton = titleButton;
+    
+    // 设置导航栏标题
+    HVWAccountInfo *accountInfo = [HVWAccountInfoTool accountInfo];
+    NSString *navTitle = @"首页";
+    if (accountInfo.screen_name) {
+        navTitle = accountInfo.screen_name;
+    }
+    [titleButton setTitle:navTitle forState:UIControlStateNormal];
+    
     [titleButton setImage:[UIImage imageWithNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
     // 设置背景图片
     [titleButton setBackgroundImage:[UIImage resizedImage:@"navigationbar_filter_background_highlighted"] forState:UIControlStateHighlighted];
@@ -224,6 +224,27 @@
     self.navigationItem.titleView = titleButton;
 }
 
+
+/** 获取用户信息 */
+- (void) setupUserInfo {
+    // 设置参数
+    HVWAccountInfo *accountInfo = [HVWAccountInfoTool accountInfo];
+    HVWUserParam *param = [[HVWUserParam alloc] init];
+    param.uid = accountInfo.uid;
+    
+    // 发送请求
+    [HVWUserTool userWithParameters:param success:^(HVWUserResult *user) {
+        // 获取用户信息
+        HVWAccountInfo *accountInfo = [HVWAccountInfoTool accountInfo];
+        accountInfo.screen_name = user.screen_name;
+        [HVWAccountInfoTool saveAccountInfo:accountInfo];
+        
+        // 设置导航栏标题
+        [self.titleButton setTitle:accountInfo.screen_name forState:UIControlStateNormal];
+    } failure:^(NSError *error) {
+        HVWLog(@"获取用户信息失败!error:%@", error);
+    }];
+}
 
 #pragma mark - UITableVidwDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

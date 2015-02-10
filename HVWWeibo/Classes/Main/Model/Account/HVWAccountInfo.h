@@ -23,7 +23,11 @@
 /**  当前授权用户的UID */
 @property(nonatomic, copy) NSString *uid;
 
+/** 用户昵称 */
+@property(nonatomic, copy) NSString *screen_name;
+
 /** 自定义初始化方法,这里是用来初始化服务器发来的json数据的 */
 + (instancetype) accountInfoWithDictionary:(NSDictionary *) dict;
+
 
 @end

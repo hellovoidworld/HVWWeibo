@@ -16,4 +16,7 @@
 /** 用户头像地址（中图），50×50像素 */
 @property(nonatomic, copy) NSString *profile_image_url;
 
+/** 用户昵称 */
+@property(nonatomic, copy) NSString *screen_name;
+
 @end

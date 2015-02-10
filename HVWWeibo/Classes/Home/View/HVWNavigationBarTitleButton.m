@@ -49,4 +49,14 @@
     return CGRectMake(x, y, width, height);
 }
 
+/** 重写setTitle,根据文本改变宽度 */
+- (void)setTitle:(NSString *)title forState:(UIControlState)state {
+    [super setTitle:title forState:state];
+    
+    NSDictionary *param = @{NSFontAttributeName: self.titleLabel.font};
+    CGFloat titleWidth = [title boundingRectWithSize:CGSizeMake(MAXFLOAT, self.height) options:NSStringDrawingUsesLineFragmentOrigin attributes:param context:nil].size.width;
+    
+    self.width = titleWidth + self.height + 10;
+}
+
 @end

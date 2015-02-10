@@ -10,6 +10,13 @@
 #import "HVWComposeTextView.h"
 #import "HVWComposeToolBar.h"
 #import "HVWComposeImageDisplayView.h"
+#import "HVWAccountInfo.h"
+#import "HVWAccountInfoTool.h"
+#import "MBProgressHUD+MJ.h"
+#import "HVWFileDataParam.h"
+#import "HVWComposeStatusParam.h"
+#import "HVWComposeStatusResult.h"
+#import "HVWStatusTool.h"
 
 @interface HVWComposeViewController () <UITextViewDelegate, UIScrollViewDelegate, HVWComposeToolBarDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -85,6 +92,9 @@
     
     // 导航栏左方按钮
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"退出" style:UIBarButtonItemStylePlain target:self action:@selector(dismiss)];
+    
+    // 导航栏右方按钮
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"发送" style:UIBarButtonItemStylePlain target:self action:@selector(sendWeibo)];
 }
 
 /** 添加图片显示区 */
@@ -104,12 +114,81 @@
     [self.composeView becomeFirstResponder];
 }
 
+/** 退出“发微博” */
 - (void) dismiss {
     [self.composeView resignFirstResponder];
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
+/** 发送微博 */
+- (void) sendWeibo {
+    if (self.composeView.text.length == 0) {
+        [MBProgressHUD showError:@"你好像忘记了内容..."];
+        return;
+    }
+    
+    [MBProgressHUD showMessage:@"发送微博中..."];
+    
+    if (self.imageDisplayView.images.count) { // 发送的时带图片的微博
+        [self sendWeiboWithTextNImage];
+    } else { // 发送的是纯文字微博
+        [self sendWeiboWithText];
+    }
+}
+
+/** 发送文字微博 */
+- (void) sendWeiboWithText {
+    // 设置参数
+    HVWComposeStatusParam *statusParam = [[HVWComposeStatusParam alloc] init];
+    statusParam.status= self.composeView.text;
+    
+    // 发送请求
+    [HVWStatusTool composeStatusWithParameters:statusParam imagesData:nil success:^(HVWComposeStatusResult *result) {
+        [MBProgressHUD hideHUD];
+        [MBProgressHUD showSuccess:@"发送成功!"];
+    } failure:^(NSError *error) {
+        HVWLog(@"发送微博失败, error:%@", error);
+        [MBProgressHUD hideHUD];
+        [MBProgressHUD showError:@"发送失败!error"];
+    }];
+}
+
+/** 发送图文微博 */
+- (void) sendWeiboWithTextNImage {
+    if (self.imageDisplayView.images.count == 0) {
+        [MBProgressHUD hideHUD];
+        [MBProgressHUD showError:@"懵了,找不到图儿!"];
+        return;
+    }
+    
+    // 设置参数
+    HVWComposeStatusParam *statusParam = [[HVWComposeStatusParam alloc] init];
+    statusParam.status = self.composeView.text;
+    
+    // 发送的图片数据,其实现在开放的API只允许上传一张图片
+    HVWFileDataParam *imageDataParam = [[HVWFileDataParam alloc] init];
+    UIImage *image  = [self.imageDisplayView.images firstObject];
+    imageDataParam.fileData = UIImagePNGRepresentation(image);
+    imageDataParam.name = @"pic"; // 这是微博API指定的参数名
+    imageDataParam.fileName = @"statusPic"; // 这是随便起的
+    imageDataParam.mimeType = @"image/png";
+    NSArray *imagesDataParamArray = @[imageDataParam];
+    
+    // 发送请求
+    [HVWStatusTool composeStatusWithParameters:statusParam imagesData:imagesDataParamArray success:^(HVWComposeStatusResult *result) {
+        [MBProgressHUD hideHUD];
+        [MBProgressHUD showSuccess:@"发送成功!"];
+    } failure:^(NSError *error) {
+        HVWLog(@"发送微博失败, error:%@", error);
+        [MBProgressHUD hideHUD];
+        [MBProgressHUD showError:@"发送失败!"];
+    }];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 #pragma mark - UIScrollViewDelegate
 /** 开始拖曳 */

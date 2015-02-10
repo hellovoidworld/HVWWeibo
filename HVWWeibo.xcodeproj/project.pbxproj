@@ -24,7 +24,6 @@
 		E05FD2A61A827AF900B5CDE3 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E05FD29C1A827AF900B5CDE3 /* AFURLResponseSerialization.m */; };
 		E05FD2A71A827AF900B5CDE3 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E05FD29E1A827AF900B5CDE3 /* AFURLSessionManager.m */; };
 		E05FD2AB1A82965400B5CDE3 /* HVWControllerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E05FD2AA1A82965400B5CDE3 /* HVWControllerTool.m */; };
-		E05FD2B11A82989300B5CDE3 /* HVWAccountInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E05FD2B01A82989300B5CDE3 /* HVWAccountInfo.m */; };
 		E05FD2B41A829D2E00B5CDE3 /* HVWAccountInfoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E05FD2B31A829D2E00B5CDE3 /* HVWAccountInfoTool.m */; };
 		E07837551A7C7375003CD8B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E07837541A7C7375003CD8B5 /* main.m */; };
 		E07837601A7C7375003CD8B5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E078375F1A7C7375003CD8B5 /* Images.xcassets */; };
@@ -45,6 +44,19 @@
 		E090E66A1A85412500547AC0 /* HVWComposeToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E090E6691A85412500547AC0 /* HVWComposeToolBar.m */; };
 		E090E66D1A854D8300547AC0 /* HVWComposeImageDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = E090E66C1A854D8300547AC0 /* HVWComposeImageDisplayView.m */; };
 		E0913B881A808B060066324E /* HVWNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0913B871A808B060066324E /* HVWNewFeatureViewController.m */; };
+		E09492CC1A88805600D90E6F /* HVWNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E09492CB1A88805600D90E6F /* HVWNetworkTool.m */; };
+		E09492CF1A88FE6600D90E6F /* HVWStatusTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E09492CE1A88FE6600D90E6F /* HVWStatusTool.m */; };
+		E09492E11A891AAB00D90E6F /* HVWHomeStatusParam.m in Sources */ = {isa = PBXBuildFile; fileRef = E09492DE1A891AAB00D90E6F /* HVWHomeStatusParam.m */; };
+		E09492E21A891AAB00D90E6F /* HVWHomeStatusResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E09492E01A891AAB00D90E6F /* HVWHomeStatusResult.m */; };
+		E09492E61A8923D000D90E6F /* HVWAccountInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E09492E51A8923D000D90E6F /* HVWAccountInfo.m */; };
+		E09492EB1A89260C00D90E6F /* HVWBaseParam.m in Sources */ = {isa = PBXBuildFile; fileRef = E09492EA1A89260C00D90E6F /* HVWBaseParam.m */; };
+		E09492EE1A89268B00D90E6F /* HVWUserParam.m in Sources */ = {isa = PBXBuildFile; fileRef = E09492ED1A89268B00D90E6F /* HVWUserParam.m */; };
+		E09492F11A89272600D90E6F /* HVWUserResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E09492F01A89272600D90E6F /* HVWUserResult.m */; };
+		E09492F41A892BEF00D90E6F /* HVWBaseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E09492F31A892BEF00D90E6F /* HVWBaseTool.m */; };
+		E09492F71A892FCE00D90E6F /* HVWFileDataParam.m in Sources */ = {isa = PBXBuildFile; fileRef = E09492F61A892FCE00D90E6F /* HVWFileDataParam.m */; };
+		E0BE74D91A89F550005C65CD /* HVWComposeStatusParam.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BE74D81A89F550005C65CD /* HVWComposeStatusParam.m */; };
+		E0BE74DC1A89F561005C65CD /* HVWComposeStatusResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BE74DB1A89F561005C65CD /* HVWComposeStatusResult.m */; };
+		E0BE74DF1A8A4233005C65CD /* HVWUserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BE74DE1A8A4233005C65CD /* HVWUserTool.m */; };
 		E0C0E4C31A8340DD00A7B07D /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C0E4C21A8340DD00A7B07D /* Foundation+Log.m */; };
 		E0C0E4C61A83435E00A7B07D /* HVWUser.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C0E4C51A83435E00A7B07D /* HVWUser.m */; };
 		E0C0E4C91A83436C00A7B07D /* HVWStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C0E4C81A83436C00A7B07D /* HVWStatus.m */; };
@@ -119,8 +131,6 @@
 		E05FD29E1A827AF900B5CDE3 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		E05FD2A91A82965400B5CDE3 /* HVWControllerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWControllerTool.h; sourceTree = "<group>"; };
 		E05FD2AA1A82965400B5CDE3 /* HVWControllerTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWControllerTool.m; sourceTree = "<group>"; };
-		E05FD2AF1A82989300B5CDE3 /* HVWAccountInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWAccountInfo.h; sourceTree = "<group>"; };
-		E05FD2B01A82989300B5CDE3 /* HVWAccountInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWAccountInfo.m; sourceTree = "<group>"; };
 		E05FD2B21A829D2E00B5CDE3 /* HVWAccountInfoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWAccountInfoTool.h; sourceTree = "<group>"; };
 		E05FD2B31A829D2E00B5CDE3 /* HVWAccountInfoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWAccountInfoTool.m; sourceTree = "<group>"; };
 		E078374F1A7C7375003CD8B5 /* HVWWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HVWWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +173,32 @@
 		E090E66C1A854D8300547AC0 /* HVWComposeImageDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWComposeImageDisplayView.m; sourceTree = "<group>"; };
 		E0913B861A808B060066324E /* HVWNewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWNewFeatureViewController.h; sourceTree = "<group>"; };
 		E0913B871A808B060066324E /* HVWNewFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWNewFeatureViewController.m; sourceTree = "<group>"; };
+		E09492CA1A88805600D90E6F /* HVWNetworkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWNetworkTool.h; sourceTree = "<group>"; };
+		E09492CB1A88805600D90E6F /* HVWNetworkTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWNetworkTool.m; sourceTree = "<group>"; };
+		E09492CD1A88FE6600D90E6F /* HVWStatusTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWStatusTool.h; sourceTree = "<group>"; };
+		E09492CE1A88FE6600D90E6F /* HVWStatusTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWStatusTool.m; sourceTree = "<group>"; };
+		E09492DD1A891AAB00D90E6F /* HVWHomeStatusParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWHomeStatusParam.h; sourceTree = "<group>"; };
+		E09492DE1A891AAB00D90E6F /* HVWHomeStatusParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWHomeStatusParam.m; sourceTree = "<group>"; };
+		E09492DF1A891AAB00D90E6F /* HVWHomeStatusResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWHomeStatusResult.h; sourceTree = "<group>"; };
+		E09492E01A891AAB00D90E6F /* HVWHomeStatusResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWHomeStatusResult.m; sourceTree = "<group>"; };
+		E09492E41A8923D000D90E6F /* HVWAccountInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWAccountInfo.h; sourceTree = "<group>"; };
+		E09492E51A8923D000D90E6F /* HVWAccountInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWAccountInfo.m; sourceTree = "<group>"; };
+		E09492E91A89260C00D90E6F /* HVWBaseParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWBaseParam.h; sourceTree = "<group>"; };
+		E09492EA1A89260C00D90E6F /* HVWBaseParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWBaseParam.m; sourceTree = "<group>"; };
+		E09492EC1A89268B00D90E6F /* HVWUserParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWUserParam.h; sourceTree = "<group>"; };
+		E09492ED1A89268B00D90E6F /* HVWUserParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWUserParam.m; sourceTree = "<group>"; };
+		E09492EF1A89272600D90E6F /* HVWUserResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWUserResult.h; sourceTree = "<group>"; };
+		E09492F01A89272600D90E6F /* HVWUserResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWUserResult.m; sourceTree = "<group>"; };
+		E09492F21A892BEF00D90E6F /* HVWBaseTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWBaseTool.h; sourceTree = "<group>"; };
+		E09492F31A892BEF00D90E6F /* HVWBaseTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWBaseTool.m; sourceTree = "<group>"; };
+		E09492F51A892FCE00D90E6F /* HVWFileDataParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWFileDataParam.h; sourceTree = "<group>"; };
+		E09492F61A892FCE00D90E6F /* HVWFileDataParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWFileDataParam.m; sourceTree = "<group>"; };
+		E0BE74D71A89F550005C65CD /* HVWComposeStatusParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWComposeStatusParam.h; sourceTree = "<group>"; };
+		E0BE74D81A89F550005C65CD /* HVWComposeStatusParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWComposeStatusParam.m; sourceTree = "<group>"; };
+		E0BE74DA1A89F561005C65CD /* HVWComposeStatusResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWComposeStatusResult.h; sourceTree = "<group>"; };
+		E0BE74DB1A89F561005C65CD /* HVWComposeStatusResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWComposeStatusResult.m; sourceTree = "<group>"; };
+		E0BE74DD1A8A4233005C65CD /* HVWUserTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWUserTool.h; sourceTree = "<group>"; };
+		E0BE74DE1A8A4233005C65CD /* HVWUserTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWUserTool.m; sourceTree = "<group>"; };
 		E0C0E4C21A8340DD00A7B07D /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		E0C0E4C41A83435E00A7B07D /* HVWUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWUser.h; sourceTree = "<group>"; };
 		E0C0E4C51A83435E00A7B07D /* HVWUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWUser.m; sourceTree = "<group>"; };
@@ -375,6 +411,14 @@
 				E05FD2AA1A82965400B5CDE3 /* HVWControllerTool.m */,
 				E05FD2B21A829D2E00B5CDE3 /* HVWAccountInfoTool.h */,
 				E05FD2B31A829D2E00B5CDE3 /* HVWAccountInfoTool.m */,
+				E09492CA1A88805600D90E6F /* HVWNetworkTool.h */,
+				E09492CB1A88805600D90E6F /* HVWNetworkTool.m */,
+				E09492CD1A88FE6600D90E6F /* HVWStatusTool.h */,
+				E09492CE1A88FE6600D90E6F /* HVWStatusTool.m */,
+				E09492F21A892BEF00D90E6F /* HVWBaseTool.h */,
+				E09492F31A892BEF00D90E6F /* HVWBaseTool.m */,
+				E0BE74DD1A8A4233005C65CD /* HVWUserTool.h */,
+				E0BE74DE1A8A4233005C65CD /* HVWUserTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -557,8 +601,14 @@
 		E07837A11A7C8282003CD8B5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E05FD2AF1A82989300B5CDE3 /* HVWAccountInfo.h */,
-				E05FD2B01A82989300B5CDE3 /* HVWAccountInfo.m */,
+				E09492E91A89260C00D90E6F /* HVWBaseParam.h */,
+				E09492EA1A89260C00D90E6F /* HVWBaseParam.m */,
+				E09492F51A892FCE00D90E6F /* HVWFileDataParam.h */,
+				E09492F61A892FCE00D90E6F /* HVWFileDataParam.m */,
+				E09492E71A89258000D90E6F /* ComposeStatus */,
+				E09492E81A89258000D90E6F /* User */,
+				E09492E31A8923C600D90E6F /* Account */,
+				E09492D91A891A5200D90E6F /* HomeStatus */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -683,6 +733,48 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E09492D91A891A5200D90E6F /* HomeStatus */ = {
+			isa = PBXGroup;
+			children = (
+				E09492DD1A891AAB00D90E6F /* HVWHomeStatusParam.h */,
+				E09492DE1A891AAB00D90E6F /* HVWHomeStatusParam.m */,
+				E09492DF1A891AAB00D90E6F /* HVWHomeStatusResult.h */,
+				E09492E01A891AAB00D90E6F /* HVWHomeStatusResult.m */,
+			);
+			path = HomeStatus;
+			sourceTree = "<group>";
+		};
+		E09492E31A8923C600D90E6F /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				E09492E41A8923D000D90E6F /* HVWAccountInfo.h */,
+				E09492E51A8923D000D90E6F /* HVWAccountInfo.m */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		E09492E71A89258000D90E6F /* ComposeStatus */ = {
+			isa = PBXGroup;
+			children = (
+				E0BE74D71A89F550005C65CD /* HVWComposeStatusParam.h */,
+				E0BE74D81A89F550005C65CD /* HVWComposeStatusParam.m */,
+				E0BE74DA1A89F561005C65CD /* HVWComposeStatusResult.h */,
+				E0BE74DB1A89F561005C65CD /* HVWComposeStatusResult.m */,
+			);
+			path = ComposeStatus;
+			sourceTree = "<group>";
+		};
+		E09492E81A89258000D90E6F /* User */ = {
+			isa = PBXGroup;
+			children = (
+				E09492EC1A89268B00D90E6F /* HVWUserParam.h */,
+				E09492ED1A89268B00D90E6F /* HVWUserParam.m */,
+				E09492EF1A89272600D90E6F /* HVWUserResult.h */,
+				E09492F01A89272600D90E6F /* HVWUserResult.m */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		E0C0E4CD1A83512A00A7B07D /* SDWebImage */ = {
@@ -844,8 +936,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E09492E11A891AAB00D90E6F /* HVWHomeStatusParam.m in Sources */,
 				E0C0E4F11A83512A00A7B07D /* SDWebImageDecoder.m in Sources */,
+				E09492E21A891AAB00D90E6F /* HVWHomeStatusResult.m in Sources */,
+				E09492CF1A88FE6600D90E6F /* HVWStatusTool.m in Sources */,
+				E09492F11A89272600D90E6F /* HVWUserResult.m in Sources */,
 				E0C0E4F41A83512A00A7B07D /* SDWebImageManager.m in Sources */,
+				E09492E61A8923D000D90E6F /* HVWAccountInfo.m in Sources */,
 				E0C0E50D1A83583100A7B07D /* MJFoundation.m in Sources */,
 				E05FD2A51A827AF900B5CDE3 /* AFURLRequestSerialization.m in Sources */,
 				E05FD2A41A827AF900B5CDE3 /* AFURLConnectionOperation.m in Sources */,
@@ -857,10 +954,12 @@
 				E0913B881A808B060066324E /* HVWNewFeatureViewController.m in Sources */,
 				E05FD2A71A827AF900B5CDE3 /* AFURLSessionManager.m in Sources */,
 				E0C0E4F91A83512A00A7B07D /* UIImage+WebP.m in Sources */,
+				E0BE74DF1A8A4233005C65CD /* HVWUserTool.m in Sources */,
 				E07837AE1A7C82BA003CD8B5 /* AppDelegate.m in Sources */,
 				E0C0E4EF1A83512A00A7B07D /* SDImageCache.m in Sources */,
 				E07837551A7C7375003CD8B5 /* main.m in Sources */,
 				E0C0E50F1A83583100A7B07D /* MJType.m in Sources */,
+				E09492CC1A88805600D90E6F /* HVWNetworkTool.m in Sources */,
 				E07837C81A7D06F9003CD8B5 /* HVWNavigationViewController.m in Sources */,
 				E05FD2A31A827AF900B5CDE3 /* AFSecurityPolicy.m in Sources */,
 				E0C0E4F81A83512A00A7B07D /* UIImage+MultiFormat.m in Sources */,
@@ -870,6 +969,7 @@
 				E07837B71A7C87CD003CD8B5 /* HVWMessageViewController.m in Sources */,
 				E05FD28A1A8274BF00B5CDE3 /* MBProgressHUD.m in Sources */,
 				E0C0E4F71A83512A00A7B07D /* UIImage+GIF.m in Sources */,
+				E0BE74DC1A89F561005C65CD /* HVWComposeStatusResult.m in Sources */,
 				E0C0E4F01A83512A00A7B07D /* SDWebImageCompat.m in Sources */,
 				E027C2291A7FFD40001960BB /* HVWTabBar.m in Sources */,
 				E0C5ADC71A7E8900002D7379 /* HVWSearchBar.m in Sources */,
@@ -879,10 +979,13 @@
 				E07D37C41A7F0B8F00CF81E8 /* UIView+Extension.m in Sources */,
 				E0C0E4F31A83512A00A7B07D /* SDWebImageDownloaderOperation.m in Sources */,
 				E05FD2A11A827AF900B5CDE3 /* AFHTTPSessionManager.m in Sources */,
+				E09492EB1A89260C00D90E6F /* HVWBaseParam.m in Sources */,
+				E09492F41A892BEF00D90E6F /* HVWBaseTool.m in Sources */,
 				E0C0E4CC1A83437400A7B07D /* HVWPic.m in Sources */,
 				E090E66D1A854D8300547AC0 /* HVWComposeImageDisplayView.m in Sources */,
 				E07D37C71A7F143400CF81E8 /* HVWNavigationBarTitleButton.m in Sources */,
 				E0C0E4C91A83436C00A7B07D /* HVWStatus.m in Sources */,
+				E09492F71A892FCE00D90E6F /* HVWFileDataParam.m in Sources */,
 				E07837CF1A7D2599003CD8B5 /* UIBarButtonItem+Extension.m in Sources */,
 				E07837BD1A7C87EB003CD8B5 /* HVWDiscoverViewController.m in Sources */,
 				E0C0E50E1A83583100A7B07D /* MJIvar.m in Sources */,
@@ -892,7 +995,6 @@
 				E0C0E50C1A83583100A7B07D /* MJConst.m in Sources */,
 				E0C0E4FB1A83512A00A7B07D /* UIImageView+WebCache.m in Sources */,
 				E027C2221A7FC5A5001960BB /* HVWPopMenu.m in Sources */,
-				E05FD2B11A82989300B5CDE3 /* HVWAccountInfo.m in Sources */,
 				E0C0E4F51A83512A00A7B07D /* SDWebImagePrefetcher.m in Sources */,
 				E0C0E4C61A83435E00A7B07D /* HVWUser.m in Sources */,
 				E0C0E4EE1A83512A00A7B07D /* NSData+ImageContentType.m in Sources */,
@@ -902,9 +1004,11 @@
 				E05FD2A21A827AF900B5CDE3 /* AFNetworkReachabilityManager.m in Sources */,
 				E05FD2A61A827AF900B5CDE3 /* AFURLResponseSerialization.m in Sources */,
 				E0C0E5121A83583100A7B07D /* NSObject+MJKeyValue.m in Sources */,
+				E0BE74D91A89F550005C65CD /* HVWComposeStatusParam.m in Sources */,
 				E0C0E4F61A83512A00A7B07D /* UIButton+WebCache.m in Sources */,
 				E0C0E4F21A83512A00A7B07D /* SDWebImageDownloader.m in Sources */,
 				E090E6671A85008C00547AC0 /* HVWComposeTextView.m in Sources */,
+				E09492EE1A89268B00D90E6F /* HVWUserParam.m in Sources */,
 				E027C2301A7FFDA0001960BB /* HVWComposeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
