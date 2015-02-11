@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class HVWTabBar;
-@protocol HVWTabBarDelegate <NSObject>
+@protocol HVWTabBarDelegate <UITabBarDelegate>
 
 @optional
 - (void) tabBarDidComposeButtonClick:(HVWTabBar *) tabBar;

@@ -8,8 +8,8 @@
 
 #import "AppDelegate.h"
 #import "HVWControllerTool.h"
-
-
+#import "SDImageCache.h"
+#import "SDWebImageManager.h"
 
 @interface AppDelegate ()
 
@@ -33,6 +33,12 @@
     // 设置根控制器
     [HVWControllerTool chooseRootViewController];
     
+    // 允许修改app图标角标
+    if (iOS8) {
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    }
+    
     return YES;
 }
 
@@ -42,8 +48,10 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    // 设置让app在后台也能运行
+    UIBackgroundTaskIdentifier taskID = [application beginBackgroundTaskWithExpirationHandler:^{
+        [application endBackgroundTask:taskID];
+    }];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -56,6 +64,14 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
+    // 清除缓存
+    [[SDImageCache sharedImageCache] clearMemory];
+    
+    // 停止下载
+    [[SDWebImageManager sharedManager] cancelAll];
 }
 
 

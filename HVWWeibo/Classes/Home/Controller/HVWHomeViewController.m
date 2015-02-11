@@ -52,7 +52,7 @@
     [self setupUserInfo];
     
     // 添加刷新器
-//    [self addRefresh];
+    [self addRefresh];
 }
 
 /** 初始化status */
@@ -74,8 +74,6 @@
     // 刷新控件下拉事件
     [refreshControl addTarget:self action:@selector(refreshLatestWeibo:) forControlEvents:UIControlEventValueChanged];
     
-    // 开启的时候自动进入刷新状态
-    [refreshControl beginRefreshing];
     // 加载微博数据
     [self refreshLatestWeibo:refreshControl];
     
@@ -89,6 +87,9 @@
 /** 刷新最新微博数据 */
 - (void) refreshLatestWeibo:(UIRefreshControl *) refreshControl {
     // 把最新的微博数据加到原来的微博前面
+    
+    // 开启的时候自动进入刷新状态
+    [refreshControl beginRefreshing];
     
     // 设置参数
     /** 若指定此参数，则返回ID比since_id大的微博（即比since_id时间晚的微博），默认为0。*/
@@ -120,6 +121,9 @@
     
     // 缩回刷新器
     [refreshControl endRefreshing];
+    
+    // 更新未读消息提醒角标
+    self.tabBarItem.badgeValue = nil;
 }
 
 /** 加载更多（旧）微博 */
@@ -334,6 +338,23 @@
     if (scrollingDelta < scrollViewHeighWithFooter) {
         [self.loadMoreFooter beginRefresh];
         [self loadMoreWeiboData];
+    }
+}
+
+#pragma mark - 成员方法
+/** 刷新数据 */
+- (void) refreshStatusFromAnother:(BOOL)isFromAnother {
+    if (!isFromAnother) { // 重复点击首页item
+        // 滚动到顶部
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+        
+        if (self.tabBarItem.badgeValue.intValue) { // 有新消息
+            // 刷新数据
+            [self refreshLatestWeibo:self.refreshControl];
+        }
+    } else {
+        
     }
 }
 

@@ -10,4 +10,7 @@
 
 @interface HVWHomeViewController : UITableViewController
 
+/** 刷新数据 */
+- (void) refreshStatusFromAnother:(BOOL)isFromAnother;
+
 @end
