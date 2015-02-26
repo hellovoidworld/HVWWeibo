@@ -23,4 +23,25 @@
 /** 微博配图地址数组，里面装载的时HVWPic模型 */
 @property(nonatomic, strong) NSArray *pic_urls;
 
+/** 微博创建时间 */
+@property(nonatomic, copy) NSString *created_at;
+
+/** 微博来源 */
+@property(nonatomic, copy) NSString *source;
+
+/** 转发微博 */
+@property(nonatomic, strong) HVWStatus *retweeted_status;
+
+/** int	转发数 */
+@property(nonatomic, assign) int reposts_count;
+
+/** int	评论数 */
+@property(nonatomic, assign) int comments_count;
+
+/** int	表态数 */
+@property(nonatomic, assign) int attitudes_count;
+
+/** 转发昵称 */
+- (NSString *) retweetedName;
+
 @end

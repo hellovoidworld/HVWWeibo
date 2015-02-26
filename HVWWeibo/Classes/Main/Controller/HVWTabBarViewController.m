@@ -114,10 +114,6 @@
 /** “+”按钮点击代理方法 */
 - (void)tabBarDidComposeButtonClick:(HVWTabBar *)tabBar {
     HVWComposeViewController *composeView = [[HVWComposeViewController alloc] init];
-  
-    // tabBarController不是由navigationController弹出来的，没有navigationController
-//    [self.navigationController pushViewController:vc animated:YES];
-//    HVWLog(@"%@", self.navigationController); // null
     
     // 为了使用导航栏，使用NavigationController包装一下
     HVWNavigationViewController *nav = [[HVWNavigationViewController alloc] initWithRootViewController:composeView];

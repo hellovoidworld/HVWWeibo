@@ -21,14 +21,16 @@
 #import "HVWHomeStatusResult.h"
 #import "HVWUserTool.h"
 #import "HVWUserParam.h"
+#import "HVWStatusCell.h"
+#import "HVWStatusFrame.h"
 
 @interface HVWHomeViewController () <HVWPopMenuDelegate, UITableViewDataSource, UITableViewDelegate>
 
 /** 导航栏标题按钮展开标识 */
 @property(nonatomic, assign, getter=isTitleButtonExtended) BOOL titleButtonExtended;
 
-/** 微博数据 */
-@property(nonatomic, strong) NSMutableArray *statuses;
+/** 微博frame数组，包含所有微博的frame和数据 */
+@property(nonatomic, strong) NSMutableArray *statusFrames;
 
 /** 上拉刷新控件 */
 @property(nonatomic, strong) HVWLoadMoreWeiboFooterView *loadMoreFooter;
@@ -55,12 +57,12 @@
     [self addRefresh];
 }
 
-/** 初始化status */
-- (NSMutableArray *)statuses {
-    if (nil == _statuses) {
-        _statuses = [NSMutableArray array];
+/** 初始化statusFrame */
+- (NSMutableArray *)statusFrames {
+    if (nil == _statusFrames) {
+        _statusFrames = [NSMutableArray array];
     }
-    return _statuses;
+    return _statusFrames;
 }
 
 /** 添加刷新器 */
@@ -95,26 +97,27 @@
     /** 若指定此参数，则返回ID比since_id大的微博（即比since_id时间晚的微博），默认为0。*/
     HVWHomeStatusParam *param = [[HVWHomeStatusParam alloc] init];
     
-    HVWStatus *firstStatus = [self.statuses firstObject];
+    HVWStatusFrame *firstStatusFrame = [self.statusFrames firstObject];
+    HVWStatus *firstStatus = firstStatusFrame.status;
     if (firstStatus) {
         param.since_id = [NSNumber numberWithDouble:firstStatus.idstr.doubleValue];
     }
     
     // 发送请求
     [HVWStatusTool statusWithParameters:param success:^(HVWHomeStatusResult *statusResult) {
-        // 获取微博数组
-        NSArray *newStatus = statusResult.statuses;
+        // 获取最新的微博frame数组
+        NSArray *newStatusFrames = [HVWStatusFrame statusFramesWithStatuses:statusResult.statuses];
         
         // 插入到微博数据数组的最前面
-        NSRange newWeiboRange = NSMakeRange(0, newStatus.count);
+        NSRange newWeiboRange = NSMakeRange(0, newStatusFrames.count);
         NSIndexSet *newWeiboIndexSet = [NSIndexSet indexSetWithIndexesInRange:newWeiboRange];
-        [self.statuses insertObjects:newStatus atIndexes:newWeiboIndexSet];
+        [self.statusFrames insertObjects:newStatusFrames atIndexes:newWeiboIndexSet];
         
         // 刷新数据
         [self.tableView reloadData];
         
         // 刷新提示
-        [self showRefreshIndicator:newStatus.count];
+        [self showRefreshIndicator:newStatusFrames.count];
     } failure:^(NSError *error) {
         HVWLog(@"获取微博数据失败------%@", error);
     }];
@@ -134,18 +137,19 @@
     HVWHomeStatusParam *param = [[HVWHomeStatusParam alloc] init];
     
     /** 若指定此参数，则返回ID小于或等于max_id的微博，默认为0。*/
-    HVWStatus *lastStatus = [self.statuses lastObject];
+    HVWStatusFrame *lastStatusFrame = [self.statusFrames lastObject];
+    HVWStatus *lastStatus = lastStatusFrame.status;
     if (lastStatus) {
         param.max_id = @([lastStatus.idstr longLongValue] - 1);
     }
     
     // 发送请求
     [HVWStatusTool statusWithParameters:param success:^(HVWHomeStatusResult *statusResult) {
-        // 得到新微博数据
-        NSArray *newStatus = statusResult.statuses;
+        // 得到新微博数据frame
+        NSArray *newStatusFrames = [HVWStatusFrame statusFramesWithStatuses:statusResult.statuses];
         
         // 插入到微博数据数组的后面
-        [self.statuses addObjectsFromArray:newStatus];
+        [self.statusFrames addObjectsFromArray:newStatusFrames];
         
         // 刷新数据
         [self.tableView reloadData];
@@ -253,39 +257,21 @@
 #pragma mark - UITableVidwDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // 没有微博数据的时候，不需要显示“加载更多微博”控件
-    self.loadMoreFooter.hidden = self.statuses.count==0?YES:NO;
+    self.loadMoreFooter.hidden = self.statusFrames.count==0?YES:NO;
     
-    return self.statuses.count;
+    return self.statusFrames.count;
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    HVWStatusFrame *statusFrame = self.statusFrames[indexPath.row];
     
-    static NSString *ID = @"HomeCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (nil == cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-    }
-    
-    HVWStatus *status = self.statuses[indexPath.row];
-    HVWUser *user = status.user;
-    
-    // 加载内容
-    cell.textLabel.text = status.text;
-    // 作者
-    cell.detailTextLabel.text = user.name;
-    // 作者头像
-    NSString *imageUrlStr = user.profile_image_url;
-    [cell.imageView setImageWithURL:[NSURL URLWithString:imageUrlStr] placeholderImage:[UIImage imageWithNamed:@"avatar_default_small"]];
+    HVWStatusCell *cell = [HVWStatusCell cellWithTableView:tableView];
+    cell.statusFrame = statusFrame;
     
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
-/** 测试方法，点击cell创建一个UIViewController并push出来 */
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-}
-
 /** 左边导航栏按钮事件 */
 - (void) searchFriend {
     HVWLog(@"searchFriend");
@@ -318,6 +304,12 @@
     }
 }
 
+/** cell高度 */
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    HVWStatusFrame *statusFrame = self.statusFrames[indexPath.row];
+    return statusFrame.cellHeight;
+}
+
 #pragma mark - HVWPopMenuDelegate
 - (void)popMenuDidHideMenu:(HVWPopMenu *)popMenu {
     UIButton *titleButton = (UIButton *)self.navigationItem.titleView;
@@ -345,16 +337,14 @@
 /** 刷新数据 */
 - (void) refreshStatusFromAnother:(BOOL)isFromAnother {
     if (!isFromAnother) { // 重复点击首页item
-        // 滚动到顶部
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-        [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
-        
         if (self.tabBarItem.badgeValue.intValue) { // 有新消息
             // 刷新数据
             [self refreshLatestWeibo:self.refreshControl];
         }
-    } else {
         
+        // 滚动到顶部
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
     }
 }
 
