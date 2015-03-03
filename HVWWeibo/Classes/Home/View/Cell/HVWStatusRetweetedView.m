@@ -9,6 +9,7 @@
 #import "HVWStatusRetweetedView.h"
 #import "HVWStatus.h"
 #import "HVWUser.h"
+#import "HVWStatusPhotosView.h"
 
 @interface HVWStatusRetweetedView()
 
@@ -17,6 +18,9 @@
 
 /** 微博文本内容 */
 @property(nonatomic, weak) UILabel *textLabel;
+
+/** 微博配图控件 */
+@property(nonatomic, weak) HVWStatusPhotosView *photosView;
 
 @end
 
@@ -27,6 +31,8 @@
     self = [super initWithFrame:frame];
     
     if (self) { // 初始化子控件开始
+        self.userInteractionEnabled = YES;
+        
         // 昵称
         UILabel *nameLabel = [[UILabel alloc] init];
         nameLabel.font = HVWStatusOriginalNameFont;
@@ -40,7 +46,14 @@
         self.textLabel = textLabel;
         [self addSubview:textLabel];
         
-        self.backgroundColor = [UIColor grayColor];
+        // 设置背景图片
+        [self setImage:[UIImage imageWithNamed:@"timeline_retweet_background"]];
+        [self setHighlightedImage:[UIImage imageWithNamed:@"timeline_retweet_background_highlighted"]];
+        
+        // 配图
+        HVWStatusPhotosView *photosView = [[HVWStatusPhotosView alloc] init];
+        self.photosView = photosView;
+        [self addSubview:photosView];
     }
     
     return self;
@@ -60,6 +73,15 @@
     // 正文
     self.textLabel.frame = retweetedFrame.textFrame;
     self.textLabel.text = status.text;
+    
+    // 配图
+    if (status.pic_urls.count) {
+        self.photosView.frame = retweetedFrame.photosFrame;
+        self.photosView.photos = status.pic_urls;
+        self.photosView.hidden = NO;
+    } else {
+        self.photosView.hidden = YES;
+    }
     
     // 设置自己的frame
     self.frame = retweetedFrame.frame;

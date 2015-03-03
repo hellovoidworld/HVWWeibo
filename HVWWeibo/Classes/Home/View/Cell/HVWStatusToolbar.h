@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HVWStatusToolbarFrame.h"
 
-@interface HVWStatusToolbar : UIView
+@interface HVWStatusToolbar : UIImageView
 
 /** frame */
 @property(nonatomic, strong) HVWStatusToolbarFrame *toolbarFrame;

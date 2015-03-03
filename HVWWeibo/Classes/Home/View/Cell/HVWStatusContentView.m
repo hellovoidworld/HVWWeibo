@@ -26,6 +26,12 @@
     self = [super initWithFrame:frame];
     
     if (self) { // 初始化子控件开始
+        self.userInteractionEnabled = YES;
+        
+        // 设置背景图片
+        self.image = [UIImage resizedImage:@"timeline_card_top_background"];
+        self.highlightedImage = [UIImage resizedImage:@"timeline_card_top_background_highlighted"];
+        
         // 初始化原创内容控件
         [self setupOriginalView];
         

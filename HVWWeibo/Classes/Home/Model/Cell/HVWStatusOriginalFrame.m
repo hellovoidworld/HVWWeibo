@@ -7,12 +7,18 @@
 //
 
 #import "HVWStatusOriginalFrame.h"
+#import "HVWStatusPhotosView.h"
+#import "HVWPic.h"
+#import "UIImageView+WebCache.h"
 
 @implementation HVWStatusOriginalFrame
 
 /** 加载微博数据 */
 - (void)setStatus:(HVWStatus *)status {
     _status = status;
+    
+    // 整个view高度
+    CGFloat height = 0;
     
     // 设置控件frame
     // 头像
@@ -31,6 +37,16 @@
     NSDictionary *nameBoundParam = @{NSFontAttributeName : HVWStatusOriginalNameFont};
     CGSize nameSize = [user.name boundingRectWithSize:nameBoundSize options:NSStringDrawingUsesLineFragmentOrigin attributes:nameBoundParam context:nil].size;
     self.nameFrame =  (CGRect){{nameX, nameY}, nameSize};
+    
+    // vip会员标识
+    if (user.isVip) {
+        CGFloat vipX = CGRectGetMaxX(self.nameFrame) + HVWStatusCellInset;
+        CGFloat vipY = nameY;
+        CGFloat vipWidth = nameSize.height;
+        CGFloat vipHeight = vipWidth;
+        self.vipFrame = CGRectMake(vipX, vipY, vipWidth, vipHeight);
+    }
+    
 
     /**  由于发表时间会随着时间推移变化，所以不能在这里一次性设置尺寸
      * 而“来源”的位置尺寸和“发表时间”有关联，所以一起移走
@@ -60,11 +76,22 @@
     CGSize textSize = [status.text boundingRectWithSize:textBoundSize options:NSStringDrawingUsesLineFragmentOrigin attributes:textBoundParam context:nil].size;
     self.textFrame = (CGRect){{textX, textY}, textSize};
     
+    // 配图相册
+    if (status.pic_urls.count) {
+        CGFloat photosX = textX;
+        CGFloat photosY = CGRectGetMaxY(self.textFrame);
+        CGSize photosSize = [HVWStatusPhotosView photosViewSizeWithCount:status.pic_urls.count];
+        self.photosFrame = (CGRect){{photosX, photosY}, photosSize};
+        
+        height = CGRectGetMaxY(self.photosFrame);
+    } else {
+        height = CGRectGetMaxY(self.textFrame) + HVWStatusCellInset;
+    }
+    
     // 设置自己的frame
     CGFloat x = 0;
     CGFloat y = 0;
     CGFloat width = HVWScreenWidth;
-    CGFloat height = CGRectGetMaxY(self.textFrame) + HVWStatusCellInset;
     self.frame = CGRectMake(x, y, width, height);
 }
 

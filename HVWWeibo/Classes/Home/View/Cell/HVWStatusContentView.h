@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HVWStatusContentFrame.h"
 
-@interface HVWStatusContentView : UIView
+@interface HVWStatusContentView : UIImageView
 
 /** frame */
 @property(nonatomic, strong) HVWStatusContentFrame *contentFrame;

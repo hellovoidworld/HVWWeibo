@@ -20,7 +20,7 @@
 /** 微博作者的用户信息字段 详细 */
 @property(nonatomic, strong) HVWUser *user;
 
-/** 微博配图地址数组，里面装载的时HVWPic模型 */
+/** 微博配图地址数组，里面装载的是HVWPic模型 */
 @property(nonatomic, strong) NSArray *pic_urls;
 
 /** 微博创建时间 */

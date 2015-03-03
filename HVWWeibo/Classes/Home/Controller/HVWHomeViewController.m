@@ -55,6 +55,11 @@
     
     // 添加刷新器
     [self addRefresh];
+    
+    // 设置tableView背景颜色
+    self.tableView.backgroundColor = HVWColor(211, 211, 211);
+    // 设置"不需要分割线"
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 /** 初始化statusFrame */

@@ -39,6 +39,11 @@
 		E07837CF1A7D2599003CD8B5 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E07837CE1A7D2599003CD8B5 /* UIBarButtonItem+Extension.m */; };
 		E07D37C41A7F0B8F00CF81E8 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E07D37C31A7F0B8F00CF81E8 /* UIView+Extension.m */; };
 		E07D37C71A7F143400CF81E8 /* HVWNavigationBarTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E07D37C61A7F143400CF81E8 /* HVWNavigationBarTitleButton.m */; };
+		E088B02A1AA1CAE100865EC8 /* HVWStatusPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = E088B0291AA1CAE100865EC8 /* HVWStatusPhotosView.m */; };
+		E088B02D1AA1CB0500865EC8 /* HVWStatusPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = E088B02C1AA1CB0500865EC8 /* HVWStatusPhotoView.m */; };
+		E088B0341AA233BE00865EC8 /* HVWPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = E088B0331AA233BE00865EC8 /* HVWPhotoBrowser.m */; };
+		E088B03A1AA4B07900865EC8 /* HVWPhotoCover.m in Sources */ = {isa = PBXBuildFile; fileRef = E088B0391AA4B07900865EC8 /* HVWPhotoCover.m */; };
+		E088B03D1AA4CE6F00865EC8 /* HVWPhotoPageLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E088B03C1AA4CE6F00865EC8 /* HVWPhotoPageLabel.m */; };
 		E090E6641A84BC2100547AC0 /* HVWLoadMoreWeiboFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = E090E6631A84BC2100547AC0 /* HVWLoadMoreWeiboFooterView.m */; };
 		E090E6671A85008C00547AC0 /* HVWComposeTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E090E6661A85008C00547AC0 /* HVWComposeTextView.m */; };
 		E090E66A1A85412500547AC0 /* HVWComposeToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E090E6691A85412500547AC0 /* HVWComposeToolBar.m */; };
@@ -177,6 +182,16 @@
 		E07D37C31A7F0B8F00CF81E8 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		E07D37C51A7F143400CF81E8 /* HVWNavigationBarTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWNavigationBarTitleButton.h; sourceTree = "<group>"; };
 		E07D37C61A7F143400CF81E8 /* HVWNavigationBarTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWNavigationBarTitleButton.m; sourceTree = "<group>"; };
+		E088B0281AA1CAE100865EC8 /* HVWStatusPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWStatusPhotosView.h; sourceTree = "<group>"; };
+		E088B0291AA1CAE100865EC8 /* HVWStatusPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWStatusPhotosView.m; sourceTree = "<group>"; };
+		E088B02B1AA1CB0500865EC8 /* HVWStatusPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWStatusPhotoView.h; sourceTree = "<group>"; };
+		E088B02C1AA1CB0500865EC8 /* HVWStatusPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWStatusPhotoView.m; sourceTree = "<group>"; };
+		E088B0321AA233BE00865EC8 /* HVWPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWPhotoBrowser.h; sourceTree = "<group>"; };
+		E088B0331AA233BE00865EC8 /* HVWPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWPhotoBrowser.m; sourceTree = "<group>"; };
+		E088B0381AA4B07900865EC8 /* HVWPhotoCover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWPhotoCover.h; sourceTree = "<group>"; };
+		E088B0391AA4B07900865EC8 /* HVWPhotoCover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWPhotoCover.m; sourceTree = "<group>"; };
+		E088B03B1AA4CE6F00865EC8 /* HVWPhotoPageLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWPhotoPageLabel.h; sourceTree = "<group>"; };
+		E088B03C1AA4CE6F00865EC8 /* HVWPhotoPageLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWPhotoPageLabel.m; sourceTree = "<group>"; };
 		E090E6621A84BC2100547AC0 /* HVWLoadMoreWeiboFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWLoadMoreWeiboFooterView.h; sourceTree = "<group>"; };
 		E090E6631A84BC2100547AC0 /* HVWLoadMoreWeiboFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWLoadMoreWeiboFooterView.m; sourceTree = "<group>"; };
 		E090E6651A85008C00547AC0 /* HVWComposeTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWComposeTextView.h; sourceTree = "<group>"; };
@@ -400,6 +415,7 @@
 		E05FD2811A82749D00B5CDE3 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				E088B0311AA2336500865EC8 /* PhotoBrowser */,
 				E0C0E4FC1A83583100A7B07D /* MJExtension */,
 				E0C0E4CD1A83512A00A7B07D /* SDWebImage */,
 				E05FD28B1A827AF900B5CDE3 /* AFNetworking */,
@@ -751,6 +767,19 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		E088B0311AA2336500865EC8 /* PhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				E088B0321AA233BE00865EC8 /* HVWPhotoBrowser.h */,
+				E088B0331AA233BE00865EC8 /* HVWPhotoBrowser.m */,
+				E088B0381AA4B07900865EC8 /* HVWPhotoCover.h */,
+				E088B0391AA4B07900865EC8 /* HVWPhotoCover.m */,
+				E088B03B1AA4CE6F00865EC8 /* HVWPhotoPageLabel.h */,
+				E088B03C1AA4CE6F00865EC8 /* HVWPhotoPageLabel.m */,
+			);
+			path = PhotoBrowser;
+			sourceTree = "<group>";
+		};
 		E0913B821A808A790066324E /* NewFeature */ = {
 			isa = PBXGroup;
 			children = (
@@ -927,6 +956,10 @@
 				E0D4D4401A8C6D90009EB5A3 /* HVWStatusRetweetedView.m */,
 				E0D4D4421A8C6DA2009EB5A3 /* HVWStatusToolbar.h */,
 				E0D4D4431A8C6DA2009EB5A3 /* HVWStatusToolbar.m */,
+				E088B0281AA1CAE100865EC8 /* HVWStatusPhotosView.h */,
+				E088B0291AA1CAE100865EC8 /* HVWStatusPhotosView.m */,
+				E088B02B1AA1CB0500865EC8 /* HVWStatusPhotoView.h */,
+				E088B02C1AA1CB0500865EC8 /* HVWStatusPhotoView.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1045,6 +1078,7 @@
 				E05FD2A51A827AF900B5CDE3 /* AFURLRequestSerialization.m in Sources */,
 				E05FD2A41A827AF900B5CDE3 /* AFURLConnectionOperation.m in Sources */,
 				E05FD2801A82722300B5CDE3 /* HVWOAuthViewController.m in Sources */,
+				E088B02A1AA1CAE100865EC8 /* HVWStatusPhotosView.m in Sources */,
 				E05FD2AB1A82965400B5CDE3 /* HVWControllerTool.m in Sources */,
 				E0BCCE681A8CB54A00810171 /* HVWStatusRetweetedFrame.m in Sources */,
 				E05FD2881A8274BF00B5CDE3 /* MBProgressHUD+MJ.m in Sources */,
@@ -1052,6 +1086,7 @@
 				E0C0E4ED1A83512A00A7B07D /* MKAnnotationView+WebCache.m in Sources */,
 				E0913B881A808B060066324E /* HVWNewFeatureViewController.m in Sources */,
 				E05FD2A71A827AF900B5CDE3 /* AFURLSessionManager.m in Sources */,
+				E088B0341AA233BE00865EC8 /* HVWPhotoBrowser.m in Sources */,
 				E0938E331A8B1A9800A85CD4 /* HVWUnreadCountResult.m in Sources */,
 				E0C0E4F91A83512A00A7B07D /* UIImage+WebP.m in Sources */,
 				E0BE74DF1A8A4233005C65CD /* HVWUserTool.m in Sources */,
@@ -1072,6 +1107,7 @@
 				E07837B71A7C87CD003CD8B5 /* HVWMessageViewController.m in Sources */,
 				E05FD28A1A8274BF00B5CDE3 /* MBProgressHUD.m in Sources */,
 				E0C0E4F71A83512A00A7B07D /* UIImage+GIF.m in Sources */,
+				E088B03A1AA4B07900865EC8 /* HVWPhotoCover.m in Sources */,
 				E0BE74DC1A89F561005C65CD /* HVWComposeStatusResult.m in Sources */,
 				E0C0E4F01A83512A00A7B07D /* SDWebImageCompat.m in Sources */,
 				E0938E301A8B1A8000A85CD4 /* HVWUnreadCountParam.m in Sources */,
@@ -1091,6 +1127,7 @@
 				E07D37C71A7F143400CF81E8 /* HVWNavigationBarTitleButton.m in Sources */,
 				E0BCCE651A8CB53C00810171 /* HVWStatusOriginalFrame.m in Sources */,
 				E0C0E4C91A83436C00A7B07D /* HVWStatus.m in Sources */,
+				E088B03D1AA4CE6F00865EC8 /* HVWPhotoPageLabel.m in Sources */,
 				E09492F71A892FCE00D90E6F /* HVWFileDataParam.m in Sources */,
 				E07837CF1A7D2599003CD8B5 /* UIBarButtonItem+Extension.m in Sources */,
 				E07837BD1A7C87EB003CD8B5 /* HVWDiscoverViewController.m in Sources */,
@@ -1100,6 +1137,7 @@
 				E07837BA1A7C87DC003CD8B5 /* HVWProfileViewController.m in Sources */,
 				E0AC76BE1A91BFDB006CD6AF /* NSDate+Extension.m in Sources */,
 				E07837B41A7C87AA003CD8B5 /* HVWHomeViewController.m in Sources */,
+				E088B02D1AA1CB0500865EC8 /* HVWStatusPhotoView.m in Sources */,
 				E0C0E50C1A83583100A7B07D /* MJConst.m in Sources */,
 				E0C0E4FB1A83512A00A7B07D /* UIImageView+WebCache.m in Sources */,
 				E027C2221A7FC5A5001960BB /* HVWPopMenu.m in Sources */,

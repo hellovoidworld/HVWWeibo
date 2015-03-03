@@ -31,6 +31,9 @@
         cell = [[self alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
     
+    // 清空cell背景色
+    cell.backgroundColor = [UIColor clearColor];
+    
     return cell;
 }
 
@@ -43,7 +46,7 @@
         [self setupStatusContentView];
         
         // 初始化工具条控件 */
-//        [self setupToolbar];
+        [self setupToolbar];
     }
     
     return self;

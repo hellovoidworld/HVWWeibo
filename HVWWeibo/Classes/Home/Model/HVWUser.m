@@ -10,4 +10,9 @@
 
 @implementation HVWUser
 
+/** 判断是否是会员 */
+- (BOOL)isVip {
+    return self.mbtype > 2;
+}
+
 @end

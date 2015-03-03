@@ -13,4 +13,7 @@
 /** 缩略图片地址，没有时不返回此字段 */
 @property(nonatomic, copy) NSString *thumbnail_pic;
 
+/** 中等图片 */
+@property(nonatomic, copy) NSString *bmiddle_pic;
+
 @end

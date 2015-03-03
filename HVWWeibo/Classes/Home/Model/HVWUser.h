@@ -19,4 +19,13 @@
 /** 用户昵称 */
 @property(nonatomic, copy) NSString *screen_name;
 
+/** 会员等级 */
+@property(nonatomic, assign) int mbrank;
+
+/** 会员类型 */
+@property(nonatomic, assign) int mbtype;
+
+/** 是否是会员 */
+@property(nonatomic, assign, getter=isVip) BOOL vip;
+
 @end

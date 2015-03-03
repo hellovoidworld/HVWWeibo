@@ -42,7 +42,7 @@
     
     // 自己的frame
     CGFloat contentX = 0;
-    CGFloat contentY = 0;
+    CGFloat contentY = 10; // 下移10个单位
     CGFloat contentWidth = HVWScreenWidth;
     self.frame = CGRectMake(contentX, contentY, contentWidth, contentHeight);
 }

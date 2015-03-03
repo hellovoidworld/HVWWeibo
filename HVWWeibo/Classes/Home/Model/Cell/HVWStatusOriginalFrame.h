@@ -18,6 +18,9 @@
 /** 昵称 */
 @property(nonatomic, assign) CGRect nameFrame;
 
+/** vip会员标识 */
+@property(nonatomic, assign) CGRect vipFrame;
+
 /** 正文 */
 @property(nonatomic, assign) CGRect textFrame;
 
@@ -29,6 +32,9 @@
 
 /** 头像 */
 @property(nonatomic, assign) CGRect iconFrame;
+
+/** 配图相册 */
+@property(nonatomic, assign) CGRect photosFrame;
 
 #pragma mark - 数据模型
 /** 微博数据 */

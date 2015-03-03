@@ -39,6 +39,7 @@
     toolbarFrame.status = status;
     CGRect tbFrame = toolbarFrame.frame;
     tbFrame.origin.y = CGRectGetMaxY(contentFrame.frame);
+    toolbarFrame.frame = tbFrame;
     
     // cell高度
     self.cellHeight = CGRectGetMaxY(tbFrame);

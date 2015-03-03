@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HVWStatusRetweetedFrame.h"
 
-@interface HVWStatusRetweetedView : UIView
+@interface HVWStatusRetweetedView : UIImageView
 
 /** frame */
 @property(nonatomic, strong) HVWStatusRetweetedFrame *retweetedFrame;

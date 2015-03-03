@@ -10,6 +10,7 @@
 #import "HVWStatus.h"
 #import "HVWUser.h"
 #import "UIImageView+WebCache.h"
+#import "HVWStatusPhotosView.h"
 
 @interface HVWStatusOriginalView()
 
@@ -19,6 +20,9 @@
 /** 头像 */
 @property(nonatomic, weak) UIImageView *iconView;
 
+/** vip会员标识 */
+@property(nonatomic, weak) UIImageView *vipView;
+
 /** 微博发表时间 */
 @property(nonatomic, weak) UILabel *timeLabel;
 
@@ -27,6 +31,9 @@
 
 /** 微博文本内容 */
 @property(nonatomic, weak) UILabel *textLabel;
+
+/** 微博配图控件 */
+@property(nonatomic, weak) HVWStatusPhotosView *photosView;
 
 @end
 
@@ -49,6 +56,12 @@
         self.iconView = iconView;
         [self addSubview:iconView];
         
+        // vip会员
+        UIImageView *vipView = [[UIImageView alloc] init];
+        vipView.contentMode = UIViewContentModeCenter;
+        self.vipView = vipView;
+        [self addSubview:vipView];
+        
         // 发表时间
         UILabel *timeLabel = [[UILabel alloc] init];
         self.timeLabel = timeLabel;
@@ -69,6 +82,11 @@
         [self addSubview:textLabel];
         
 //        self.backgroundColor = [UIColor redColor];
+        
+        // 配图
+        HVWStatusPhotosView *photosView = [[HVWStatusPhotosView alloc] init];
+        self.photosView = photosView;
+        [self addSubview:photosView];
     }
     
     return self;
@@ -90,6 +108,18 @@
     self.nameLabel.frame = originalFrame.nameFrame;
     self.nameLabel.font = HVWStatusOriginalNameFont;
     self.nameLabel.text = user.name;
+    
+    // vip会员标识
+    if (user.isVip) {
+        self.nameLabel.textColor = [UIColor orangeColor];
+        self.vipView.hidden = NO;
+        self.vipView.frame = originalFrame.vipFrame;
+        self.vipView.image = [UIImage imageWithNamed:[NSString stringWithFormat:@"common_icon_membership_level%d", user.mbrank]];
+        
+    } else { // 注意cell的重用问题，需要回复设置
+        self.nameLabel.textColor = [UIColor blackColor];
+        self.vipView.hidden = YES;
+    }
     
     // 发表时间
     self.timeLabel.frame = originalFrame.timeFrame;
@@ -126,6 +156,15 @@
     // 设置自动换行
     self.textLabel.numberOfLines = 0;
     self.textLabel.text = status.text;
+    
+    // 配图
+    if (status.pic_urls.count) {
+        self.photosView.frame = originalFrame.photosFrame;
+        self.photosView.photos = status.pic_urls;
+        self.photosView.hidden = NO;
+    } else {
+        self.photosView.hidden = YES;
+    }
     
     // 设置自己的frame
     self.frame = originalFrame.frame;

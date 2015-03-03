@@ -7,12 +7,16 @@
 //
 
 #import "HVWStatusRetweetedFrame.h"
+#import "HVWStatusPhotosView.h"
 
 @implementation HVWStatusRetweetedFrame
 
 /** 加载微博数据 */
 - (void)setStatus:(HVWStatus *)status {
     _status = status;
+    
+    // view高度
+    CGFloat height = 0;
     
     // 设置控件frame
     // 昵称
@@ -31,11 +35,22 @@
     CGSize textSize = [status.text boundingRectWithSize:textBoundSize options:NSStringDrawingUsesLineFragmentOrigin attributes:textBoundParam context:nil].size;
     self.textFrame = (CGRect){{textX, textY}, textSize};
     
+    // 配图相册
+    if (status.pic_urls.count) {
+        CGFloat photosX = textX;
+        CGFloat photosY = CGRectGetMaxY(self.textFrame);
+        CGSize photosSize = [HVWStatusPhotosView photosViewSizeWithCount:status.pic_urls.count];
+        self.photosFrame = (CGRect){{photosX, photosY}, photosSize};
+        
+        height = CGRectGetMaxY(self.photosFrame);
+    } else {
+        height = CGRectGetMaxY(self.textFrame) + HVWStatusCellInset;
+    }
+    
     // 设置自己的frame
     CGFloat x = 0;
     CGFloat y = 0;
     CGFloat width = HVWScreenWidth;
-    CGFloat height = CGRectGetMaxY(self.textFrame) + HVWStatusCellInset;
     self.frame = CGRectMake(x, y, width, height);
 }
 

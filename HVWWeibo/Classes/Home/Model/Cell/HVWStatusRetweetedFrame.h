@@ -21,6 +21,9 @@
 /** 正文 */
 @property(nonatomic, assign) CGRect textFrame;
 
+/** 配图相册 */
+@property(nonatomic, assign) CGRect photosFrame;
+
 #pragma mark - 数据模型
 /** 微博数据 */
 @property(nonatomic, strong) HVWStatus *status;
