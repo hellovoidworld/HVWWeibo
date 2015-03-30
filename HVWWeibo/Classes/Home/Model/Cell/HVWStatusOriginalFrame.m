@@ -47,34 +47,15 @@
         self.vipFrame = CGRectMake(vipX, vipY, vipWidth, vipHeight);
     }
     
-
-    /**  由于发表时间会随着时间推移变化，所以不能在这里一次性设置尺寸
-     * 而“来源”的位置尺寸和“发表时间”有关联，所以一起移走
-     * 移动到view,每次加载“发表时间”、“来源”都要重新计算size
-    // 发表时间
-    CGFloat timeX = nameX;
-    CGFloat timeY = CGRectGetMaxY(self.nameFrame);
-    CGSize timeBoundSize = CGSizeMake(HVWScreenWidth - timeX, MAXFLOAT);
-    NSDictionary *timeBoundParam = @{NSFontAttributeName : HVWStatusOriginalTimeFont};
-    CGSize timeSize = [status.created_at boundingRectWithSize:timeBoundSize options:NSStringDrawingUsesLineFragmentOrigin attributes:timeBoundParam context:nil].size;
-    self.timeFrame = (CGRect){{timeX, timeY}, timeSize};
-    
-    // 来源
-    CGFloat sourceX = CGRectGetMaxX(self.timeFrame) + HVWStatusCellInset;
-    CGFloat sourceY = timeY;
-    CGSize sourceBoundSize = CGSizeMake(HVWScreenWidth - sourceX, MAXFLOAT);
-    NSDictionary *sourceBoundParam = @{NSFontAttributeName : HVWStatusOriginalSourceFont};
-    CGSize sourceSize = [status.source boundingRectWithSize:sourceBoundSize options:NSStringDrawingUsesLineFragmentOrigin attributes:sourceBoundParam context:nil].size;
-    self.sourceFrame = (CGRect){{sourceX, sourceY}, sourceSize};
-  */
-    
     // 正文
     CGFloat textX = iconX;
     CGFloat textY = CGRectGetMaxY(self.iconFrame);
     CGSize textBoundSize = CGSizeMake(HVWScreenWidth - textX * 2, MAXFLOAT);
-    NSDictionary *textBoundParam = @{NSFontAttributeName : HVWStatusOriginalTextFont};
-    CGSize textSize = [status.text boundingRectWithSize:textBoundSize options:NSStringDrawingUsesLineFragmentOrigin attributes:textBoundParam context:nil].size;
+    
+    CGSize textSize = [status.attrText boundingRectWithSize:textBoundSize options:NSStringDrawingUsesLineFragmentOrigin context:nil].size;
+    
     self.textFrame = (CGRect){{textX, textY}, textSize};
+    
     
     // 配图相册
     if (status.pic_urls.count) {

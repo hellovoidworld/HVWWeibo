@@ -28,4 +28,7 @@
 /** 是否是会员 */
 @property(nonatomic, assign, getter=isVip) BOOL vip;
 
+/** 转发微博中的富文本昵称 */
+- (NSAttributedString *) attrName;
+
 @end

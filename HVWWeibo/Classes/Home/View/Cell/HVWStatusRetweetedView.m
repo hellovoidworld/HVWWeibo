@@ -10,14 +10,15 @@
 #import "HVWStatus.h"
 #import "HVWUser.h"
 #import "HVWStatusPhotosView.h"
+#import "HVWStatusContentText.h"
 
 @interface HVWStatusRetweetedView()
 
 /** 昵称 */
-@property(nonatomic, weak) UILabel *nameLabel;
+//@property(nonatomic, weak) UILabel *nameLabel;
 
 /** 微博文本内容 */
-@property(nonatomic, weak) UILabel *textLabel;
+@property(nonatomic, weak) HVWStatusContentText *textLabel;
 
 /** 微博配图控件 */
 @property(nonatomic, weak) HVWStatusPhotosView *photosView;
@@ -33,16 +34,10 @@
     if (self) { // 初始化子控件开始
         self.userInteractionEnabled = YES;
         
-        // 昵称
-        UILabel *nameLabel = [[UILabel alloc] init];
-        nameLabel.font = HVWStatusOriginalNameFont;
-        self.nameLabel = nameLabel;
-        [self addSubview:nameLabel];
-        
         // 正文
-        UILabel *textLabel = [[UILabel alloc] init];
-        textLabel.font = HVWStatusRetweetedTextFont;
-        textLabel.numberOfLines = 0; // 设置自动换行
+        HVWStatusContentText *textLabel = [[HVWStatusContentText alloc] init];
+//        textLabel.font = HVWStatusRetweetedTextFont;
+//        textLabel.numberOfLines = 0; // 设置自动换行
         self.textLabel = textLabel;
         [self addSubview:textLabel];
         
@@ -66,13 +61,11 @@
     HVWStatus *status = retweetedFrame.status;
     
     // 设置控件frame
-    // 昵称
-    self.nameLabel.frame = retweetedFrame.nameFrame;
-    self.nameLabel.text = [status retweetedName];
     
     // 正文
     self.textLabel.frame = retweetedFrame.textFrame;
-    self.textLabel.text = status.text;
+    // 使用富文本
+    self.textLabel.attributedText = status.attrText;
     
     // 配图
     if (status.pic_urls.count) {

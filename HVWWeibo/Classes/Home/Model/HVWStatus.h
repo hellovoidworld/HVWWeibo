@@ -16,6 +16,8 @@
 
 /** 微博信息内容 */
 @property(nonatomic, copy) NSString *text;
+/** 富文本形式的微博信息内容 */
+@property(nonatomic, copy) NSAttributedString *attrText;
 
 /** 微博作者的用户信息字段 详细 */
 @property(nonatomic, strong) HVWUser *user;
@@ -41,7 +43,7 @@
 /** int	表态数 */
 @property(nonatomic, assign) int attitudes_count;
 
-/** 转发昵称 */
-- (NSString *) retweetedName;
+/** 是否为转发微博 */
+@property(nonatomic, assign, getter=isRetweeted) BOOL retweeted;
 
 @end

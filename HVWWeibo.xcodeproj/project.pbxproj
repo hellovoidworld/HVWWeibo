@@ -10,6 +10,8 @@
 		E027C2221A7FC5A5001960BB /* HVWPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E027C2211A7FC5A5001960BB /* HVWPopMenu.m */; };
 		E027C2291A7FFD40001960BB /* HVWTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E027C2281A7FFD40001960BB /* HVWTabBar.m */; };
 		E027C2301A7FFDA0001960BB /* HVWComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E027C22F1A7FFDA0001960BB /* HVWComposeViewController.m */; };
+		E04CE55A1AC0783E006935D8 /* NSString+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = E04CE5591AC0783E006935D8 /* NSString+Emoji.m */; };
+		E04CE55D1AC08327006935D8 /* HVWComposeEmotionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E04CE55C1AC08327006935D8 /* HVWComposeEmotionButton.m */; };
 		E05FD2801A82722300B5CDE3 /* HVWOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05FD27F1A82722300B5CDE3 /* HVWOAuthViewController.m */; };
 		E05FD2881A8274BF00B5CDE3 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = E05FD2841A8274BF00B5CDE3 /* MBProgressHUD+MJ.m */; };
 		E05FD2891A8274BF00B5CDE3 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E05FD2851A8274BF00B5CDE3 /* MBProgressHUD.bundle */; };
@@ -63,11 +65,22 @@
 		E09492F41A892BEF00D90E6F /* HVWBaseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E09492F31A892BEF00D90E6F /* HVWBaseTool.m */; };
 		E09492F71A892FCE00D90E6F /* HVWFileDataParam.m in Sources */ = {isa = PBXBuildFile; fileRef = E09492F61A892FCE00D90E6F /* HVWFileDataParam.m */; };
 		E0AC76BE1A91BFDB006CD6AF /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AC76BD1A91BFDB006CD6AF /* NSDate+Extension.m */; };
+		E0BC251A1AC196E20015B7EF /* HVWEmotionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BC25191AC196E20015B7EF /* HVWEmotionTool.m */; };
+		E0BC251D1AC1A69F0015B7EF /* HVWComposeEmotionTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BC251C1AC1A69F0015B7EF /* HVWComposeEmotionTextView.m */; };
+		E0BC25201AC1AAE00015B7EF /* HVWComposeEmotionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BC251F1AC1AAE00015B7EF /* HVWComposeEmotionAttachment.m */; };
+		E0BC28C41AC1E7240015B7EF /* EmotionIcons in Resources */ = {isa = PBXBuildFile; fileRef = E0BC28C31AC1E7240015B7EF /* EmotionIcons */; };
+		E0BC34B21AB0143100DBD660 /* HVWComposeEmotionKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BC34B11AB0143100DBD660 /* HVWComposeEmotionKeyboard.m */; };
+		E0BC34B51AB03A1600DBD660 /* HVWComposeEmotionKeyboardToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BC34B41AB03A1600DBD660 /* HVWComposeEmotionKeyboardToolBar.m */; };
 		E0BCCE5F1A8CB51C00810171 /* HVWStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BCCE5E1A8CB51C00810171 /* HVWStatusFrame.m */; };
 		E0BCCE621A8CB52E00810171 /* HVWStatusContentFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BCCE611A8CB52E00810171 /* HVWStatusContentFrame.m */; };
 		E0BCCE651A8CB53C00810171 /* HVWStatusOriginalFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BCCE641A8CB53C00810171 /* HVWStatusOriginalFrame.m */; };
 		E0BCCE681A8CB54A00810171 /* HVWStatusRetweetedFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BCCE671A8CB54A00810171 /* HVWStatusRetweetedFrame.m */; };
 		E0BCCE6B1A8CB55F00810171 /* HVWStatusToolbarFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BCCE6A1A8CB55F00810171 /* HVWStatusToolbarFrame.m */; };
+		E0BD45131AC293F00043E877 /* HVWComposeEmotionPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0BD45121AC293F00043E877 /* HVWComposeEmotionPopView.xib */; };
+		E0BD45161AC294070043E877 /* HVWComposeEmotionPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BD45151AC294070043E877 /* HVWComposeEmotionPopView.m */; };
+		E0BD451A1AC300170043E877 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BD45191AC300170043E877 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E0BD451D1AC301D70043E877 /* HVWRegexResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BD451C1AC301D70043E877 /* HVWRegexResult.m */; };
+		E0BD45211AC315670043E877 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E0BD45201AC315670043E877 /* libicucore.dylib */; };
 		E0BE74D91A89F550005C65CD /* HVWComposeStatusParam.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BE74D81A89F550005C65CD /* HVWComposeStatusParam.m */; };
 		E0BE74DC1A89F561005C65CD /* HVWComposeStatusResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BE74DB1A89F561005C65CD /* HVWComposeStatusResult.m */; };
 		E0BE74DF1A8A4233005C65CD /* HVWUserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BE74DE1A8A4233005C65CD /* HVWUserTool.m */; };
@@ -97,12 +110,20 @@
 		E0C0E5101A83583100A7B07D /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C0E5071A83583100A7B07D /* NSObject+MJCoding.m */; };
 		E0C0E5111A83583100A7B07D /* NSObject+MJIvar.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C0E5091A83583100A7B07D /* NSObject+MJIvar.m */; };
 		E0C0E5121A83583100A7B07D /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C0E50B1A83583100A7B07D /* NSObject+MJKeyValue.m */; };
+		E0C2E7991AC68B0B00433CD3 /* HVWStatusContentText.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C2E7981AC68B0B00433CD3 /* HVWStatusContentText.m */; };
+		E0C2E7D11AC7265300433CD3 /* HVWStatusLink.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C2E7D01AC7265300433CD3 /* HVWStatusLink.m */; };
+		E0C455821AC0032F00ADF7B7 /* HVWComposeEmotionGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C455811AC0032F00ADF7B7 /* HVWComposeEmotionGridView.m */; };
 		E0C5ADC71A7E8900002D7379 /* HVWSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C5ADC61A7E8900002D7379 /* HVWSearchBar.m */; };
+		E0C5C4471AC92D9900A509BB /* HVWRegexTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C5C4461AC92D9900A509BB /* HVWRegexTool.m */; };
 		E0D4D4381A8C6D24009EB5A3 /* HVWStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D4D4371A8C6D24009EB5A3 /* HVWStatusCell.m */; };
 		E0D4D43B1A8C6D4A009EB5A3 /* HVWStatusContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D4D43A1A8C6D4A009EB5A3 /* HVWStatusContentView.m */; };
 		E0D4D43E1A8C6D70009EB5A3 /* HVWStatusOriginalView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D4D43D1A8C6D70009EB5A3 /* HVWStatusOriginalView.m */; };
 		E0D4D4411A8C6D90009EB5A3 /* HVWStatusRetweetedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D4D4401A8C6D90009EB5A3 /* HVWStatusRetweetedView.m */; };
 		E0D4D4441A8C6DA2009EB5A3 /* HVWStatusToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D4D4431A8C6DA2009EB5A3 /* HVWStatusToolbar.m */; };
+		E0F9C9AD1AC0147500BAB4B2 /* HVWComposeEmotionListView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F9C9AC1AC0147500BAB4B2 /* HVWComposeEmotionListView.m */; };
+		E0F9C9B01AC0148A00BAB4B2 /* HVWComposeEmotionPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F9C9AF1AC0148A00BAB4B2 /* HVWComposeEmotionPageControl.m */; };
+		E0F9C9B31AC016E700BAB4B2 /* HVWComposeEmotionScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F9C9B21AC016E700BAB4B2 /* HVWComposeEmotionScrollView.m */; };
+		E0F9CB7A1AC04A8D00BAB4B2 /* HVWEmotion.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F9CB791AC04A8D00BAB4B2 /* HVWEmotion.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +143,10 @@
 		E027C2281A7FFD40001960BB /* HVWTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWTabBar.m; sourceTree = "<group>"; };
 		E027C22E1A7FFDA0001960BB /* HVWComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWComposeViewController.h; sourceTree = "<group>"; };
 		E027C22F1A7FFDA0001960BB /* HVWComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWComposeViewController.m; sourceTree = "<group>"; };
+		E04CE5581AC0783E006935D8 /* NSString+Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Emoji.h"; sourceTree = "<group>"; };
+		E04CE5591AC0783E006935D8 /* NSString+Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Emoji.m"; sourceTree = "<group>"; };
+		E04CE55B1AC08327006935D8 /* HVWComposeEmotionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWComposeEmotionButton.h; sourceTree = "<group>"; };
+		E04CE55C1AC08327006935D8 /* HVWComposeEmotionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWComposeEmotionButton.m; sourceTree = "<group>"; };
 		E05FD27E1A82722300B5CDE3 /* HVWOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWOAuthViewController.h; sourceTree = "<group>"; };
 		E05FD27F1A82722300B5CDE3 /* HVWOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWOAuthViewController.m; sourceTree = "<group>"; };
 		E05FD2831A8274BF00B5CDE3 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
@@ -230,6 +255,17 @@
 		E09492F61A892FCE00D90E6F /* HVWFileDataParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWFileDataParam.m; sourceTree = "<group>"; };
 		E0AC76BC1A91BFDB006CD6AF /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
 		E0AC76BD1A91BFDB006CD6AF /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
+		E0BC25181AC196E20015B7EF /* HVWEmotionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWEmotionTool.h; sourceTree = "<group>"; };
+		E0BC25191AC196E20015B7EF /* HVWEmotionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWEmotionTool.m; sourceTree = "<group>"; };
+		E0BC251B1AC1A69F0015B7EF /* HVWComposeEmotionTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWComposeEmotionTextView.h; sourceTree = "<group>"; };
+		E0BC251C1AC1A69F0015B7EF /* HVWComposeEmotionTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWComposeEmotionTextView.m; sourceTree = "<group>"; };
+		E0BC251E1AC1AAE00015B7EF /* HVWComposeEmotionAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWComposeEmotionAttachment.h; sourceTree = "<group>"; };
+		E0BC251F1AC1AAE00015B7EF /* HVWComposeEmotionAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWComposeEmotionAttachment.m; sourceTree = "<group>"; };
+		E0BC28C31AC1E7240015B7EF /* EmotionIcons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = EmotionIcons; sourceTree = "<group>"; };
+		E0BC34B01AB0143100DBD660 /* HVWComposeEmotionKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWComposeEmotionKeyboard.h; sourceTree = "<group>"; };
+		E0BC34B11AB0143100DBD660 /* HVWComposeEmotionKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWComposeEmotionKeyboard.m; sourceTree = "<group>"; };
+		E0BC34B31AB03A1600DBD660 /* HVWComposeEmotionKeyboardToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWComposeEmotionKeyboardToolBar.h; sourceTree = "<group>"; };
+		E0BC34B41AB03A1600DBD660 /* HVWComposeEmotionKeyboardToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWComposeEmotionKeyboardToolBar.m; sourceTree = "<group>"; };
 		E0BCCE5D1A8CB51C00810171 /* HVWStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWStatusFrame.h; sourceTree = "<group>"; };
 		E0BCCE5E1A8CB51C00810171 /* HVWStatusFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWStatusFrame.m; sourceTree = "<group>"; };
 		E0BCCE601A8CB52E00810171 /* HVWStatusContentFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWStatusContentFrame.h; sourceTree = "<group>"; };
@@ -240,6 +276,15 @@
 		E0BCCE671A8CB54A00810171 /* HVWStatusRetweetedFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWStatusRetweetedFrame.m; sourceTree = "<group>"; };
 		E0BCCE691A8CB55F00810171 /* HVWStatusToolbarFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWStatusToolbarFrame.h; sourceTree = "<group>"; };
 		E0BCCE6A1A8CB55F00810171 /* HVWStatusToolbarFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWStatusToolbarFrame.m; sourceTree = "<group>"; };
+		E0BD45121AC293F00043E877 /* HVWComposeEmotionPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HVWComposeEmotionPopView.xib; sourceTree = "<group>"; };
+		E0BD45141AC294070043E877 /* HVWComposeEmotionPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWComposeEmotionPopView.h; sourceTree = "<group>"; };
+		E0BD45151AC294070043E877 /* HVWComposeEmotionPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWComposeEmotionPopView.m; sourceTree = "<group>"; };
+		E0BD45181AC300170043E877 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		E0BD45191AC300170043E877 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		E0BD451B1AC301D70043E877 /* HVWRegexResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWRegexResult.h; sourceTree = "<group>"; };
+		E0BD451C1AC301D70043E877 /* HVWRegexResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWRegexResult.m; sourceTree = "<group>"; };
+		E0BD451E1AC314AC0043E877 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		E0BD45201AC315670043E877 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		E0BE74D71A89F550005C65CD /* HVWComposeStatusParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWComposeStatusParam.h; sourceTree = "<group>"; };
 		E0BE74D81A89F550005C65CD /* HVWComposeStatusParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWComposeStatusParam.m; sourceTree = "<group>"; };
 		E0BE74DA1A89F561005C65CD /* HVWComposeStatusResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWComposeStatusResult.h; sourceTree = "<group>"; };
@@ -299,8 +344,16 @@
 		E0C0E5091A83583100A7B07D /* NSObject+MJIvar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJIvar.m"; sourceTree = "<group>"; };
 		E0C0E50A1A83583100A7B07D /* NSObject+MJKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJKeyValue.h"; sourceTree = "<group>"; };
 		E0C0E50B1A83583100A7B07D /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
+		E0C2E7971AC68B0B00433CD3 /* HVWStatusContentText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWStatusContentText.h; sourceTree = "<group>"; };
+		E0C2E7981AC68B0B00433CD3 /* HVWStatusContentText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWStatusContentText.m; sourceTree = "<group>"; };
+		E0C2E7CF1AC7265300433CD3 /* HVWStatusLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWStatusLink.h; sourceTree = "<group>"; };
+		E0C2E7D01AC7265300433CD3 /* HVWStatusLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWStatusLink.m; sourceTree = "<group>"; };
+		E0C455801AC0032F00ADF7B7 /* HVWComposeEmotionGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWComposeEmotionGridView.h; sourceTree = "<group>"; };
+		E0C455811AC0032F00ADF7B7 /* HVWComposeEmotionGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWComposeEmotionGridView.m; sourceTree = "<group>"; };
 		E0C5ADC51A7E8900002D7379 /* HVWSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWSearchBar.h; sourceTree = "<group>"; };
 		E0C5ADC61A7E8900002D7379 /* HVWSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWSearchBar.m; sourceTree = "<group>"; };
+		E0C5C4451AC92D9900A509BB /* HVWRegexTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWRegexTool.h; sourceTree = "<group>"; };
+		E0C5C4461AC92D9900A509BB /* HVWRegexTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWRegexTool.m; sourceTree = "<group>"; };
 		E0D4D4361A8C6D24009EB5A3 /* HVWStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWStatusCell.h; sourceTree = "<group>"; };
 		E0D4D4371A8C6D24009EB5A3 /* HVWStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWStatusCell.m; sourceTree = "<group>"; };
 		E0D4D4391A8C6D4A009EB5A3 /* HVWStatusContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWStatusContentView.h; sourceTree = "<group>"; };
@@ -311,6 +364,14 @@
 		E0D4D4401A8C6D90009EB5A3 /* HVWStatusRetweetedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWStatusRetweetedView.m; sourceTree = "<group>"; };
 		E0D4D4421A8C6DA2009EB5A3 /* HVWStatusToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWStatusToolbar.h; sourceTree = "<group>"; };
 		E0D4D4431A8C6DA2009EB5A3 /* HVWStatusToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWStatusToolbar.m; sourceTree = "<group>"; };
+		E0F9C9AB1AC0147500BAB4B2 /* HVWComposeEmotionListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWComposeEmotionListView.h; sourceTree = "<group>"; };
+		E0F9C9AC1AC0147500BAB4B2 /* HVWComposeEmotionListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWComposeEmotionListView.m; sourceTree = "<group>"; };
+		E0F9C9AE1AC0148A00BAB4B2 /* HVWComposeEmotionPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWComposeEmotionPageControl.h; sourceTree = "<group>"; };
+		E0F9C9AF1AC0148A00BAB4B2 /* HVWComposeEmotionPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWComposeEmotionPageControl.m; sourceTree = "<group>"; };
+		E0F9C9B11AC016E700BAB4B2 /* HVWComposeEmotionScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVWComposeEmotionScrollView.h; sourceTree = "<group>"; };
+		E0F9C9B21AC016E700BAB4B2 /* HVWComposeEmotionScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVWComposeEmotionScrollView.m; sourceTree = "<group>"; };
+		E0F9CB781AC04A8D00BAB4B2 /* HVWEmotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HVWEmotion.h; path = ../View/EmotionKeyboard/HVWEmotion.h; sourceTree = "<group>"; };
+		E0F9CB791AC04A8D00BAB4B2 /* HVWEmotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HVWEmotion.m; path = ../View/EmotionKeyboard/HVWEmotion.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +379,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0BD45211AC315670043E877 /* libicucore.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +405,7 @@
 		E027C22A1A7FFD81001960BB /* Compose */ = {
 			isa = PBXGroup;
 			children = (
+				E0BC25171AC196D40015B7EF /* Tool */,
 				E027C22B1A7FFD81001960BB /* Controller */,
 				E027C22C1A7FFD81001960BB /* Model */,
 				E027C22D1A7FFD81001960BB /* View */,
@@ -362,6 +425,8 @@
 		E027C22C1A7FFD81001960BB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E0F9CB781AC04A8D00BAB4B2 /* HVWEmotion.h */,
+				E0F9CB791AC04A8D00BAB4B2 /* HVWEmotion.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -369,6 +434,7 @@
 		E027C22D1A7FFD81001960BB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E0BC34AF1AB0141A00DBD660 /* EmotionKeyboard */,
 				E090E6651A85008C00547AC0 /* HVWComposeTextView.h */,
 				E090E6661A85008C00547AC0 /* HVWComposeTextView.m */,
 				E090E6681A85412500547AC0 /* HVWComposeToolBar.h */,
@@ -415,6 +481,7 @@
 		E05FD2811A82749D00B5CDE3 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				E0BD45171AC300170043E877 /* RegexKitLite */,
 				E088B0311AA2336500865EC8 /* PhotoBrowser */,
 				E0C0E4FC1A83583100A7B07D /* MJExtension */,
 				E0C0E4CD1A83512A00A7B07D /* SDWebImage */,
@@ -479,6 +546,8 @@
 				E0BE74DE1A8A4233005C65CD /* HVWUserTool.m */,
 				E0938E341A8B2DFB00A85CD4 /* HVWUnreadCountTool.h */,
 				E0938E351A8B2DFB00A85CD4 /* HVWUnreadCountTool.m */,
+				E0C5C4451AC92D9900A509BB /* HVWRegexTool.h */,
+				E0C5C4461AC92D9900A509BB /* HVWRegexTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -486,6 +555,8 @@
 		E07837461A7C7375003CD8B5 = {
 			isa = PBXGroup;
 			children = (
+				E0BD45201AC315670043E877 /* libicucore.dylib */,
+				E0BD451E1AC314AC0043E877 /* libiconv.dylib */,
 				E07837511A7C7375003CD8B5 /* HVWWeibo */,
 				E078376B1A7C7375003CD8B5 /* HVWWeiboTests */,
 				E07837501A7C7375003CD8B5 /* Products */,
@@ -514,6 +585,7 @@
 		E07837521A7C7375003CD8B5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E0BC28C31AC1E7240015B7EF /* EmotionIcons */,
 				E07837531A7C7375003CD8B5 /* Info.plist */,
 				E07837541A7C7375003CD8B5 /* main.m */,
 				E07837C51A7C8F0E003CD8B5 /* HVWWeibo-Prefix.pch */,
@@ -617,6 +689,8 @@
 				E0C0E4C81A83436C00A7B07D /* HVWStatus.m */,
 				E0C0E4CA1A83437400A7B07D /* HVWPic.h */,
 				E0C0E4CB1A83437400A7B07D /* HVWPic.m */,
+				E0BD451B1AC301D70043E877 /* HVWRegexResult.h */,
+				E0BD451C1AC301D70043E877 /* HVWRegexResult.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -754,6 +828,8 @@
 		E07837C11A7C8E37003CD8B5 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				E04CE5581AC0783E006935D8 /* NSString+Emoji.h */,
+				E04CE5591AC0783E006935D8 /* NSString+Emoji.m */,
 				E0C0E4C21A8340DD00A7B07D /* Foundation+Log.m */,
 				E07837C21A7C8E42003CD8B5 /* UIImage+Extension.h */,
 				E07837C31A7C8E42003CD8B5 /* UIImage+Extension.m */,
@@ -866,6 +942,43 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		E0BC25171AC196D40015B7EF /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				E0BC25181AC196E20015B7EF /* HVWEmotionTool.h */,
+				E0BC25191AC196E20015B7EF /* HVWEmotionTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		E0BC34AF1AB0141A00DBD660 /* EmotionKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				E0BC34B01AB0143100DBD660 /* HVWComposeEmotionKeyboard.h */,
+				E0BC34B11AB0143100DBD660 /* HVWComposeEmotionKeyboard.m */,
+				E0BC34B31AB03A1600DBD660 /* HVWComposeEmotionKeyboardToolBar.h */,
+				E0BC34B41AB03A1600DBD660 /* HVWComposeEmotionKeyboardToolBar.m */,
+				E0C455801AC0032F00ADF7B7 /* HVWComposeEmotionGridView.h */,
+				E0C455811AC0032F00ADF7B7 /* HVWComposeEmotionGridView.m */,
+				E0F9C9B11AC016E700BAB4B2 /* HVWComposeEmotionScrollView.h */,
+				E0F9C9B21AC016E700BAB4B2 /* HVWComposeEmotionScrollView.m */,
+				E0F9C9AE1AC0148A00BAB4B2 /* HVWComposeEmotionPageControl.h */,
+				E0F9C9AF1AC0148A00BAB4B2 /* HVWComposeEmotionPageControl.m */,
+				E0F9C9AB1AC0147500BAB4B2 /* HVWComposeEmotionListView.h */,
+				E0F9C9AC1AC0147500BAB4B2 /* HVWComposeEmotionListView.m */,
+				E04CE55B1AC08327006935D8 /* HVWComposeEmotionButton.h */,
+				E04CE55C1AC08327006935D8 /* HVWComposeEmotionButton.m */,
+				E0BC251B1AC1A69F0015B7EF /* HVWComposeEmotionTextView.h */,
+				E0BC251C1AC1A69F0015B7EF /* HVWComposeEmotionTextView.m */,
+				E0BC251E1AC1AAE00015B7EF /* HVWComposeEmotionAttachment.h */,
+				E0BC251F1AC1AAE00015B7EF /* HVWComposeEmotionAttachment.m */,
+				E0BD45121AC293F00043E877 /* HVWComposeEmotionPopView.xib */,
+				E0BD45141AC294070043E877 /* HVWComposeEmotionPopView.h */,
+				E0BD45151AC294070043E877 /* HVWComposeEmotionPopView.m */,
+			);
+			path = EmotionKeyboard;
+			sourceTree = "<group>";
+		};
 		E0BCCE5C1A8CB4C100810171 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -879,8 +992,19 @@
 				E0BCCE671A8CB54A00810171 /* HVWStatusRetweetedFrame.m */,
 				E0BCCE691A8CB55F00810171 /* HVWStatusToolbarFrame.h */,
 				E0BCCE6A1A8CB55F00810171 /* HVWStatusToolbarFrame.m */,
+				E0C2E7CF1AC7265300433CD3 /* HVWStatusLink.h */,
+				E0C2E7D01AC7265300433CD3 /* HVWStatusLink.m */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		E0BD45171AC300170043E877 /* RegexKitLite */ = {
+			isa = PBXGroup;
+			children = (
+				E0BD45181AC300170043E877 /* RegexKitLite.h */,
+				E0BD45191AC300170043E877 /* RegexKitLite.m */,
+			);
+			path = RegexKitLite;
 			sourceTree = "<group>";
 		};
 		E0C0E4CD1A83512A00A7B07D /* SDWebImage */ = {
@@ -960,6 +1084,8 @@
 				E088B0291AA1CAE100865EC8 /* HVWStatusPhotosView.m */,
 				E088B02B1AA1CB0500865EC8 /* HVWStatusPhotoView.h */,
 				E088B02C1AA1CB0500865EC8 /* HVWStatusPhotoView.m */,
+				E0C2E7971AC68B0B00433CD3 /* HVWStatusContentText.h */,
+				E0C2E7981AC68B0B00433CD3 /* HVWStatusContentText.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1044,6 +1170,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0BC28C41AC1E7240015B7EF /* EmotionIcons in Resources */,
+				E0BD45131AC293F00043E877 /* HVWComposeEmotionPopView.xib in Resources */,
 				E07837601A7C7375003CD8B5 /* Images.xcassets in Resources */,
 				E05FD2891A8274BF00B5CDE3 /* MBProgressHUD.bundle in Resources */,
 			);
@@ -1071,14 +1199,19 @@
 				E09492E21A891AAB00D90E6F /* HVWHomeStatusResult.m in Sources */,
 				E0D4D4411A8C6D90009EB5A3 /* HVWStatusRetweetedView.m in Sources */,
 				E09492CF1A88FE6600D90E6F /* HVWStatusTool.m in Sources */,
+				E04CE55D1AC08327006935D8 /* HVWComposeEmotionButton.m in Sources */,
 				E09492F11A89272600D90E6F /* HVWUserResult.m in Sources */,
 				E0C0E4F41A83512A00A7B07D /* SDWebImageManager.m in Sources */,
 				E09492E61A8923D000D90E6F /* HVWAccountInfo.m in Sources */,
+				E0BC251D1AC1A69F0015B7EF /* HVWComposeEmotionTextView.m in Sources */,
+				E0F9C9B31AC016E700BAB4B2 /* HVWComposeEmotionScrollView.m in Sources */,
 				E0C0E50D1A83583100A7B07D /* MJFoundation.m in Sources */,
+				E0C2E7D11AC7265300433CD3 /* HVWStatusLink.m in Sources */,
 				E05FD2A51A827AF900B5CDE3 /* AFURLRequestSerialization.m in Sources */,
 				E05FD2A41A827AF900B5CDE3 /* AFURLConnectionOperation.m in Sources */,
 				E05FD2801A82722300B5CDE3 /* HVWOAuthViewController.m in Sources */,
 				E088B02A1AA1CAE100865EC8 /* HVWStatusPhotosView.m in Sources */,
+				E0BD45161AC294070043E877 /* HVWComposeEmotionPopView.m in Sources */,
 				E05FD2AB1A82965400B5CDE3 /* HVWControllerTool.m in Sources */,
 				E0BCCE681A8CB54A00810171 /* HVWStatusRetweetedFrame.m in Sources */,
 				E05FD2881A8274BF00B5CDE3 /* MBProgressHUD+MJ.m in Sources */,
@@ -1094,12 +1227,14 @@
 				E0C0E4EF1A83512A00A7B07D /* SDImageCache.m in Sources */,
 				E07837551A7C7375003CD8B5 /* main.m in Sources */,
 				E0C0E50F1A83583100A7B07D /* MJType.m in Sources */,
+				E0BC34B21AB0143100DBD660 /* HVWComposeEmotionKeyboard.m in Sources */,
 				E09492CC1A88805600D90E6F /* HVWNetworkTool.m in Sources */,
 				E0D4D43E1A8C6D70009EB5A3 /* HVWStatusOriginalView.m in Sources */,
 				E0D4D43B1A8C6D4A009EB5A3 /* HVWStatusContentView.m in Sources */,
 				E07837C81A7D06F9003CD8B5 /* HVWNavigationViewController.m in Sources */,
 				E05FD2A31A827AF900B5CDE3 /* AFSecurityPolicy.m in Sources */,
 				E0C0E4F81A83512A00A7B07D /* UIImage+MultiFormat.m in Sources */,
+				E0F9CB7A1AC04A8D00BAB4B2 /* HVWEmotion.m in Sources */,
 				E0C0E5111A83583100A7B07D /* NSObject+MJIvar.m in Sources */,
 				E0938E361A8B2DFB00A85CD4 /* HVWUnreadCountTool.m in Sources */,
 				E0C0E4FA1A83512A00A7B07D /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -1107,10 +1242,12 @@
 				E07837B71A7C87CD003CD8B5 /* HVWMessageViewController.m in Sources */,
 				E05FD28A1A8274BF00B5CDE3 /* MBProgressHUD.m in Sources */,
 				E0C0E4F71A83512A00A7B07D /* UIImage+GIF.m in Sources */,
+				E0BD451D1AC301D70043E877 /* HVWRegexResult.m in Sources */,
 				E088B03A1AA4B07900865EC8 /* HVWPhotoCover.m in Sources */,
 				E0BE74DC1A89F561005C65CD /* HVWComposeStatusResult.m in Sources */,
 				E0C0E4F01A83512A00A7B07D /* SDWebImageCompat.m in Sources */,
 				E0938E301A8B1A8000A85CD4 /* HVWUnreadCountParam.m in Sources */,
+				E04CE55A1AC0783E006935D8 /* NSString+Emoji.m in Sources */,
 				E027C2291A7FFD40001960BB /* HVWTabBar.m in Sources */,
 				E0C5ADC71A7E8900002D7379 /* HVWSearchBar.m in Sources */,
 				E0C0E5101A83583100A7B07D /* NSObject+MJCoding.m in Sources */,
@@ -1124,13 +1261,16 @@
 				E0BCCE621A8CB52E00810171 /* HVWStatusContentFrame.m in Sources */,
 				E0C0E4CC1A83437400A7B07D /* HVWPic.m in Sources */,
 				E090E66D1A854D8300547AC0 /* HVWComposeImageDisplayView.m in Sources */,
+				E0BD451A1AC300170043E877 /* RegexKitLite.m in Sources */,
 				E07D37C71A7F143400CF81E8 /* HVWNavigationBarTitleButton.m in Sources */,
 				E0BCCE651A8CB53C00810171 /* HVWStatusOriginalFrame.m in Sources */,
 				E0C0E4C91A83436C00A7B07D /* HVWStatus.m in Sources */,
 				E088B03D1AA4CE6F00865EC8 /* HVWPhotoPageLabel.m in Sources */,
 				E09492F71A892FCE00D90E6F /* HVWFileDataParam.m in Sources */,
 				E07837CF1A7D2599003CD8B5 /* UIBarButtonItem+Extension.m in Sources */,
+				E0C2E7991AC68B0B00433CD3 /* HVWStatusContentText.m in Sources */,
 				E07837BD1A7C87EB003CD8B5 /* HVWDiscoverViewController.m in Sources */,
+				E0F9C9B01AC0148A00BAB4B2 /* HVWComposeEmotionPageControl.m in Sources */,
 				E0D4D4441A8C6DA2009EB5A3 /* HVWStatusToolbar.m in Sources */,
 				E0C0E50E1A83583100A7B07D /* MJIvar.m in Sources */,
 				E05FD2A01A827AF900B5CDE3 /* AFHTTPRequestOperationManager.m in Sources */,
@@ -1147,15 +1287,21 @@
 				E05FD2B41A829D2E00B5CDE3 /* HVWAccountInfoTool.m in Sources */,
 				E090E6641A84BC2100547AC0 /* HVWLoadMoreWeiboFooterView.m in Sources */,
 				E07837C41A7C8E42003CD8B5 /* UIImage+Extension.m in Sources */,
+				E0C5C4471AC92D9900A509BB /* HVWRegexTool.m in Sources */,
+				E0F9C9AD1AC0147500BAB4B2 /* HVWComposeEmotionListView.m in Sources */,
 				E05FD2A21A827AF900B5CDE3 /* AFNetworkReachabilityManager.m in Sources */,
 				E05FD2A61A827AF900B5CDE3 /* AFURLResponseSerialization.m in Sources */,
 				E0C0E5121A83583100A7B07D /* NSObject+MJKeyValue.m in Sources */,
 				E0BE74D91A89F550005C65CD /* HVWComposeStatusParam.m in Sources */,
+				E0BC25201AC1AAE00015B7EF /* HVWComposeEmotionAttachment.m in Sources */,
 				E0C0E4F61A83512A00A7B07D /* UIButton+WebCache.m in Sources */,
 				E0C0E4F21A83512A00A7B07D /* SDWebImageDownloader.m in Sources */,
+				E0BC251A1AC196E20015B7EF /* HVWEmotionTool.m in Sources */,
 				E090E6671A85008C00547AC0 /* HVWComposeTextView.m in Sources */,
 				E09492EE1A89268B00D90E6F /* HVWUserParam.m in Sources */,
+				E0C455821AC0032F00ADF7B7 /* HVWComposeEmotionGridView.m in Sources */,
 				E027C2301A7FFDA0001960BB /* HVWComposeViewController.m in Sources */,
+				E0BC34B51AB03A1600DBD660 /* HVWComposeEmotionKeyboardToolBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,10 +28,10 @@
         [self setupPlaceHolder];
         
         // 设置默认字体
-        [self setFont:[UIFont systemFontOfSize:14]];
+        [self setFont:HVWStatusComposeTextFont];
 
         // 设置通知
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inputtingText) name:UITextViewTextDidChangeNotification object:self];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange) name:UITextViewTextDidChangeNotification object:self];
     }
     
     return self;
@@ -87,12 +87,15 @@
 }
 
 /** 正在输入文本 */
-- (void) inputtingText {
-    if (self.text.length) {
-        self.placeHolderLabel.hidden = YES;
-    } else {
-        self.placeHolderLabel.hidden = NO;
-    }
+- (void) textDidChange {
+    self.placeHolderLabel.hidden = self.hasText;
+}
+
+/** 设置富文本，激活文本改变方法 */
+- (void)setAttributedText:(NSAttributedString *)attributedText {
+    [super setAttributedText:attributedText];
+    
+    [self textDidChange];
 }
 
 @end

@@ -29,4 +29,7 @@ typedef enum {
 /** 代理 */
 @property(nonatomic, weak) id<HVWComposeToolBarDelegate> delegate;
 
+/** 修改表情按钮配图 */
+- (void) changeEmotionIcon:(BOOL)openEmotion;
+
 @end

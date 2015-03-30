@@ -7,7 +7,6 @@
 //
 
 #import "HVWComposeViewController.h"
-#import "HVWComposeTextView.h"
 #import "HVWComposeToolBar.h"
 #import "HVWComposeImageDisplayView.h"
 #import "HVWAccountInfo.h"
@@ -17,17 +16,28 @@
 #import "HVWComposeStatusParam.h"
 #import "HVWComposeStatusResult.h"
 #import "HVWStatusTool.h"
+#import "HVWComposeEmotionKeyboard.h"
+#import "HVWComposeEmotionTextView.h"
 
 @interface HVWComposeViewController () <UITextViewDelegate, UIScrollViewDelegate, HVWComposeToolBarDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 /** 输入框 */
-@property(nonatomic, strong) HVWComposeTextView *composeView;
+@property(nonatomic, weak) HVWComposeEmotionTextView *composeView;
 
 /** 工具条 */
-@property(nonatomic, strong) HVWComposeToolBar *toolBar;
+@property(nonatomic, weak) HVWComposeToolBar *toolBar;
 
 /** 图片显示区 */
-@property(nonatomic, strong) HVWComposeImageDisplayView *imageDisplayView;
+@property(nonatomic, weak) HVWComposeImageDisplayView *imageDisplayView;
+
+/** 是否打开了“表情”面板 */
+@property(nonatomic, assign, getter=isOpenEmotion) BOOL openEmotion;
+
+/** “表情”键盘 */
+@property(nonatomic, strong) HVWComposeEmotionKeyboard *emotionKeyboard;
+
+/** 是否正在切换“表情”键盘 */
+@property(nonatomic, assign, getter=isChangingEmotionKeyboard) BOOL changingEmotionKeyboard;
 
 @end
 
@@ -35,8 +45,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
     
     // 设置导航栏
     [self setupNavigationBar];
@@ -46,6 +54,9 @@
 
     // 添加工具栏
     [self setupToolBar];
+    
+    // 表情面板
+    [self setupEmotionKeyboard];
 }
 
 /** 设置工具栏 */
@@ -65,7 +76,7 @@
 
 /** 设置输入控件 */
 - (void) setupTextView {
-    HVWComposeTextView *composeView = [[HVWComposeTextView alloc] init];
+    HVWComposeEmotionTextView *composeView = [[HVWComposeEmotionTextView alloc] init];
     self.composeView = composeView;
     composeView.frame = self.view.bounds;
     composeView.delegate = self;
@@ -141,7 +152,7 @@
 - (void) sendWeiboWithText {
     // 设置参数
     HVWComposeStatusParam *statusParam = [[HVWComposeStatusParam alloc] init];
-    statusParam.status= self.composeView.text;
+    statusParam.status= [self.composeView plainText];
     
     // 发送请求
     [HVWStatusTool composeStatusWithParameters:statusParam imagesData:nil success:^(HVWComposeStatusResult *result) {
@@ -164,7 +175,7 @@
     
     // 设置参数
     HVWComposeStatusParam *statusParam = [[HVWComposeStatusParam alloc] init];
-    statusParam.status = self.composeView.text;
+    statusParam.status = [self.composeView plainText];
     
     // 发送的图片数据,其实现在开放的API只允许上传一张图片
     HVWFileDataParam *imageDataParam = [[HVWFileDataParam alloc] init];
@@ -188,6 +199,22 @@
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+/** 设置“表情”面板 */
+- (void) setupEmotionKeyboard {
+    HVWComposeEmotionKeyboard *emotionKeyboard = [HVWComposeEmotionKeyboard keyboard];
+    
+    emotionKeyboard.width = self.composeView.width;
+    emotionKeyboard.height = 216;
+    
+    self.emotionKeyboard = emotionKeyboard;
+    
+    // 接收表情选择通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(emotionSelected:) name:HVWComposeEmotionSelectedNotification object:nil];
+    
+    // “删除”按钮点击通通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(emotionDeleted:) name:HVWComposeEmotionDeletedNotification object:nil];
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -215,7 +242,7 @@
             
             break;
         case HVWComposeToolBarButtonTagEmotion: // 表情
-            
+            [self openEmotion];
             break;
         default:
             break;
@@ -240,6 +267,31 @@
     [self presentViewController:picker animated:YES completion:nil];
 }
 
+/** 打开表情 */
+- (void) openEmotion {
+    self.changingEmotionKeyboard = YES;
+    
+    if (self.isOpenEmotion) { // 现在是打开“表情”面板状态，需要关闭
+        [self.toolBar changeEmotionIcon:YES];
+        self.openEmotion = NO;
+        
+        // 替换回默认键盘
+        self.composeView.inputView = nil;
+        
+    } else { // 现在是关闭了“表情”面板状态，需要打开
+        [self.toolBar changeEmotionIcon:NO];
+        self.openEmotion = YES;
+        
+        // 替换键盘
+        self.composeView.inputView = self.emotionKeyboard;
+    }
+    
+    // 要显示最新的键盘，必须先隐藏键盘
+    [self.composeView resignFirstResponder];
+    // 再弹出键盘
+    [self.composeView becomeFirstResponder];
+}
+
 #pragma mark - UIImagePickerControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     // 取得原图
@@ -258,7 +310,7 @@
     // 移动工具条
     [UIView animateWithDuration:duration animations:^{
         // 获取键盘高度
-        CGRect keyboardFrame = [note.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+        CGRect keyboardFrame = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
         CGFloat keyboardHeight = keyboardFrame.size.height;
         
         self.toolBar.transform = CGAffineTransformMakeTranslation(0, -1 * keyboardHeight);
@@ -271,9 +323,25 @@
     CGFloat duration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     
     // 移动工具条
-    [UIView animateWithDuration:duration animations:^{
-        self.toolBar.transform = CGAffineTransformIdentity;
-    }];
+    if (!self.isChangingEmotionKeyboard) { // 如果不是正在切换“表情”键盘，才需要缩回工具条
+        [UIView animateWithDuration:duration animations:^{
+            self.toolBar.transform = CGAffineTransformIdentity;
+        }];
+    }
+    
+    self.changingEmotionKeyboard = NO;
+}
+
+#pragma mark - HVWComposeEmotionSelectedNotification
+- (void) emotionSelected:(NSNotification *)note {
+    HVWEmotion *emotion = note.userInfo[@"emotion"];
+    // 添加表情到输入框
+    [self.composeView appendEmotion:emotion];
+}
+
+#pragma mark - HVWComposeEmotionDeletedNotification
+- (void) emotionDeleted:(NSNotification *)note {
+    [self.composeView deleteBackward];
 }
 
 @end

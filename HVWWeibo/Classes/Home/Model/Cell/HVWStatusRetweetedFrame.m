@@ -20,19 +20,22 @@
     
     // 设置控件frame
     // 昵称
-    CGFloat nameX = HVWStatusCellInset;
-    CGFloat nameY = HVWStatusCellInset;
-    CGSize nameBoundSize = CGSizeMake(HVWScreenWidth - nameX * 2, MAXFLOAT);
-    NSDictionary *nameBoundParam = @{NSFontAttributeName : HVWStatusOriginalNameFont};
-    CGSize nameSize = [[status retweetedName] boundingRectWithSize:nameBoundSize options:NSStringDrawingUsesLineFragmentOrigin attributes:nameBoundParam context:nil].size;
-    self.nameFrame =  (CGRect){{nameX, nameY}, nameSize};
+//    CGFloat nameX = HVWStatusCellInset;
+//    CGFloat nameY = HVWStatusCellInset;
+//    CGSize nameBoundSize = CGSizeMake(HVWScreenWidth - nameX * 2, MAXFLOAT);
+//    NSDictionary *nameBoundParam = @{NSFontAttributeName : HVWStatusOriginalNameFont};
+//    CGSize nameSize = [[status retweetedName] boundingRectWithSize:nameBoundSize options:NSStringDrawingUsesLineFragmentOrigin attributes:nameBoundParam context:nil].size;
+//    self.nameFrame =  (CGRect){{nameX, nameY}, nameSize};
     
     // 正文
-    CGFloat textX = nameX;
-    CGFloat textY = CGRectGetMaxY(self.nameFrame);
+//    CGFloat textX = nameX;
+//    CGFloat textY = CGRectGetMaxY(self.nameFrame);
+    CGFloat textX = HVWStatusCellInset;
+    CGFloat textY = HVWStatusCellInset * 0.5;
     CGSize textBoundSize = CGSizeMake(HVWScreenWidth - textX * 2, MAXFLOAT);
-    NSDictionary *textBoundParam = @{NSFontAttributeName : HVWStatusOriginalTextFont};
-    CGSize textSize = [status.text boundingRectWithSize:textBoundSize options:NSStringDrawingUsesLineFragmentOrigin attributes:textBoundParam context:nil].size;
+    
+    CGSize textSize = [status.attrText boundingRectWithSize:textBoundSize options:NSStringDrawingUsesLineFragmentOrigin context:nil].size;
+    
     self.textFrame = (CGRect){{textX, textY}, textSize};
     
     // 配图相册

@@ -42,6 +42,9 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) { // 初始化子控件开始
+        // 去掉cell的点击效果
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         // 初始化微博内容控件
         [self setupStatusContentView];
         

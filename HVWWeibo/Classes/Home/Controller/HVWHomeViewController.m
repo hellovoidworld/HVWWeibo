@@ -23,6 +23,9 @@
 #import "HVWUserParam.h"
 #import "HVWStatusCell.h"
 #import "HVWStatusFrame.h"
+#import "HVWRegexTool.h"
+#import "HVWStatusLink.h"
+#import "HVWRegexTool.h"
 
 @interface HVWHomeViewController () <HVWPopMenuDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -60,6 +63,9 @@
     self.tableView.backgroundColor = HVWColor(211, 211, 211);
     // 设置"不需要分割线"
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    // 设置通知接收
+    [self setupNotification];
 }
 
 /** 初始化statusFrame */
@@ -81,14 +87,13 @@
     // 刷新控件下拉事件
     [refreshControl addTarget:self action:@selector(refreshLatestWeibo:) forControlEvents:UIControlEventValueChanged];
     
-    // 加载微博数据
-    [self refreshLatestWeibo:refreshControl];
-    
     // 添加上拉刷新器
     HVWLoadMoreWeiboFooterView *loadMoreFooter = [[HVWLoadMoreWeiboFooterView alloc] init];
     self.loadMoreFooter = loadMoreFooter;
     self.tableView.tableFooterView = loadMoreFooter;
     
+    // 加载微博数据
+    [self refreshLatestWeibo:refreshControl];
 }
 
 /** 刷新最新微博数据 */
@@ -123,15 +128,17 @@
         
         // 刷新提示
         [self showRefreshIndicator:newStatusFrames.count];
+        
+        // 缩回刷新器
+        [refreshControl endRefreshing];
+        
+        // 更新未读消息提醒角标
+        self.tabBarItem.badgeValue = nil;
+        
     } failure:^(NSError *error) {
         HVWLog(@"获取微博数据失败------%@", error);
     }];
-    
-    // 缩回刷新器
-    [refreshControl endRefreshing];
-    
-    // 更新未读消息提醒角标
-    self.tabBarItem.badgeValue = nil;
+
 }
 
 /** 加载更多（旧）微博 */
@@ -351,6 +358,44 @@
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
     }
+}
+
+#pragma mark - 通知方法
+- (void) setupNotification {
+    // 微博链接文本点击通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusLinkDidSelected:) name:HVWStatusDidLinkSelectedNotification object:nil];
+}
+
+/** 微博链接文本点击通知 */
+- (void) statusLinkDidSelected:(NSNotification *)note {
+    HVWStatusLink *link = note.userInfo[HVWStatusLinkKey];
+    
+    switch (link.type) {
+        case HVWRegexTypeMention:
+            
+            break;
+        case HVWRegexTypeSubject:
+            
+            break;
+        case HVWRegexTypeHref:
+            [self openHref:[HVWRegexTool textWithRegexString:link.text type:HVWRegexTypeHref]];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+/** 打开超链接 */
+- (void) openHref:(NSString *)urlStr {
+    UIViewController *viewController = [[UIViewController alloc] init];
+    UIWebView *webView = [[UIWebView alloc] init];
+    webView.frame = [[UIApplication sharedApplication] keyWindow].bounds;
+    [viewController.view addSubview:webView];
+    NSURL *url = [NSURL URLWithString:urlStr];
+    [webView loadRequest:[NSURLRequest requestWithURL:url]];
+    
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 @end

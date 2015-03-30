@@ -15,4 +15,14 @@
     return self.mbtype > 2;
 }
 
+/** 转发微博中的富文本昵称 */
+- (NSAttributedString *) attrName {
+    NSMutableAttributedString *attrName = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"@%@", self.name]];
+    // 设置称为高亮蓝色
+    [attrName addAttribute:NSForegroundColorAttributeName value:HVWStatusHighlightedTextColor range:NSMakeRange(0, attrName.length)];
+    [attrName addAttribute:NSFontAttributeName value:HVWStatusRichTextFont range:NSMakeRange(0, attrName.length)];
+    
+    return attrName;
+}
+
 @end

@@ -52,15 +52,26 @@
 // 微博昵称字体
 #define HVWStatusOriginalNameFont [UIFont systemFontOfSize:14]
 // 微博时间字体
-#define HVWStatusOriginalTimeFont [UIFont systemFontOfSize:12]
+#define HVWStatusOriginalTimeFont [UIFont systemFontOfSize:10]
+#define HVWStatusOriginalTimeColor [UIColor grayColor]
 // 微博来源字体
-#define HVWStatusOriginalSourceFont [UIFont systemFontOfSize:12]
+#define HVWStatusOriginalSourceFont [UIFont systemFontOfSize:10]
+#define HVWStatusOriginalSourceColor [UIColor grayColor]
 // 微博正文字体
-#define HVWStatusOriginalTextFont [UIFont systemFontOfSize:15]
+#define HVWStatusOriginalTextFont [UIFont systemFontOfSize:14]
 // 转发微博昵称字体
 #define HVWStatusRetweetedNameFont HVWStatusOriginalNameFont
 // 转发微博正文字体
 #define HVWStatusRetweetedTextFont HVWStatusOriginalTextFont
+// 微博富文本字体
+#define HVWStatusRichTextFont [UIFont systemFontOfSize:14]
+
+// 发微博富文本字体
+#define HVWStatusComposeTextFont [UIFont systemFontOfSize:15]
+// emoji字体
+#define HVWStatusComposeEmojiFont [UIFont systemFontOfSize:32]
+// 高亮字体颜色
+#define HVWStatusHighlightedTextColor HVWColor(88, 161, 253)
 
 // 屏幕宽度
 #define HVWScreenWidth [UIScreen mainScreen].bounds.size.width
@@ -69,5 +80,21 @@
 
 // 微博展示cell内边距
 #define HVWStatusCellInset 10
+
+// 表情
+// emoji表情字体大小
+#define HVWComposeEmotionEmojiFont [UIFont systemFontOfSize:32]
+// 表情按钮被点击通知
+#define HVWComposeEmotionSelectedNotification @"HVWComposeEmotionSelectedNotification"
+// 表情面板“删除”按钮点击
+#define HVWComposeEmotionDeletedNotification @"HVWComposeEmotionDidDeletedNotification"
+
+// 可点击文本链接的属性key
+#define HVWStatusLinkAttributeKey @"HVWStatusLinkAttributeKey"
+
+// 微博链接文本点击通知
+#define HVWStatusDidLinkSelectedNotification @"HVWStatusDidLinkSelectedNotification"
+// 微博链接文本key
+#define HVWStatusLinkKey @"HVWStatusLinkKey"
 
 #endif

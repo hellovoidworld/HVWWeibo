@@ -11,6 +11,7 @@
 #import "HVWUser.h"
 #import "UIImageView+WebCache.h"
 #import "HVWStatusPhotosView.h"
+#import "HVWStatusContentText.h"
 
 @interface HVWStatusOriginalView()
 
@@ -30,7 +31,7 @@
 @property(nonatomic, weak) UILabel *sourceLabel;
 
 /** 微博文本内容 */
-@property(nonatomic, weak) UILabel *textLabel;
+@property(nonatomic, weak) HVWStatusContentText *textLabel;
 
 /** 微博配图控件 */
 @property(nonatomic, weak) HVWStatusPhotosView *photosView;
@@ -45,6 +46,8 @@
     self = [super initWithFrame:frame];
     
     if (self) { // 初始化子控件开始
+        self.userInteractionEnabled = YES;
+        
         // 昵称
         UILabel *nameLabel = [[UILabel alloc] init];
         nameLabel.font = HVWStatusOriginalNameFont;
@@ -67,21 +70,15 @@
         self.timeLabel = timeLabel;
         [self addSubview:timeLabel];
         
-//        self.timeLabel.backgroundColor = [UIColor greenColor];
-        
         // 来源
         UILabel *sourceLabel = [[UILabel alloc] init];
         self.sourceLabel = sourceLabel;
         [self addSubview:sourceLabel];
         
-//        self.sourceLabel.backgroundColor = [UIColor yellowColor];
-        
         // 正文
-        UILabel *textLabel = [[UILabel alloc] init];
+        HVWStatusContentText *textLabel = [[HVWStatusContentText alloc] init];
         self.textLabel = textLabel;
         [self addSubview:textLabel];
-        
-//        self.backgroundColor = [UIColor redColor];
         
         // 配图
         HVWStatusPhotosView *photosView = [[HVWStatusPhotosView alloc] init];
@@ -141,6 +138,7 @@
     NSDictionary *timeBoundParam = @{NSFontAttributeName : HVWStatusOriginalTimeFont};
     CGSize timeSize = [status.created_at boundingRectWithSize:timeBoundSize options:NSStringDrawingUsesLineFragmentOrigin attributes:timeBoundParam context:nil].size;
     self.timeLabel.frame = (CGRect){{timeX, timeY}, timeSize};
+    self.timeLabel.textColor = HVWStatusOriginalTimeColor;
     
     // 来源
     CGFloat sourceX = CGRectGetMaxX(self.timeLabel.frame) + HVWStatusCellInset;
@@ -149,13 +147,14 @@
     NSDictionary *sourceBoundParam = @{NSFontAttributeName : HVWStatusOriginalSourceFont};
     CGSize sourceSize = [status.source boundingRectWithSize:sourceBoundSize options:NSStringDrawingUsesLineFragmentOrigin attributes:sourceBoundParam context:nil].size;
     self.sourceLabel.frame = (CGRect){{sourceX, sourceY}, sourceSize};
+    self.sourceLabel.textColor = HVWStatusOriginalSourceColor;
     
     // 正文
     self.textLabel.frame = originalFrame.textFrame;
-    self.textLabel.font = HVWStatusOriginalTextFont;
-    // 设置自动换行
-    self.textLabel.numberOfLines = 0;
-    self.textLabel.text = status.text;
+//    self.textLabel.font = HVWStatusOriginalTextFont;
+//    // 设置自动换行
+//    self.textLabel.numberOfLines = 0;
+    self.textLabel.attributedText = status.attrText;
     
     // 配图
     if (status.pic_urls.count) {

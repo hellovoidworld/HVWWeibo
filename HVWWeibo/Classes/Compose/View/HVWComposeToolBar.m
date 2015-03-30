@@ -29,7 +29,6 @@
         [self addButtonWithIcon:@"compose_emoticonbutton_background" highlightedIcon:@"compose_emoticonbutton_background_highlighted" tag:HVWComposeToolBarButtonTagEmotion];
     }
     
-    
     return self;
 }
 
@@ -69,6 +68,25 @@
     if ([self.delegate respondsToSelector:@selector(composeToolBar:didButtonClicked:)]) {
         [self.delegate composeToolBar:self didButtonClicked:button.tag];
     }
+}
+
+/** 修改按钮配图 */
+- (void) setButtonImage:(NSString *) imageName buttonTag:(HVWComposeToolBarButtonTag)buttonTag {
+    for (int i=0; i<self.subviews.count; i++) {
+        if ([self.subviews[i] isKindOfClass:[UIButton class]]) {
+            UIButton *button = self.subviews[i];
+            if (button.tag == buttonTag) {
+                [button setImage:[UIImage imageWithNamed:imageName] forState:UIControlStateNormal];
+                [button setImage:[UIImage imageWithNamed:[NSString stringWithFormat:@"%@_highlighted", imageName]] forState:UIControlStateHighlighted];
+            }
+        }
+    }
+}
+
+/** 改变"表情"按钮配图 */
+- (void) changeEmotionIcon:(BOOL)openEmotion {
+    NSString *imageName = openEmotion?@"compose_emoticonbutton_background":@"compose_keyboardbutton_background";
+    [self setButtonImage:imageName buttonTag:HVWComposeToolBarButtonTagEmotion];
 }
 
 @end
